@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/activity_horizontal_margin"
+              tools:context=".FunctionsActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btg_btn_error_normal"
+                android:drawablePadding="@dimen/global_margin_great"
+                android:gravity="center_vertical"
+                android:text="@string/functions_error_title"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/global_font_great"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:text="@string/functions_error_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:drawableLeft="@drawable/btg_btn_track_normal"
+                android:drawablePadding="@dimen/global_margin_large"
+                android:gravity="center_vertical"
+                android:text="@string/functions_track_title"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/global_font_great"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:text="@string/functions_track_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:drawableLeft="@drawable/btg_btn_feedback_normal"
+                android:drawablePadding="@dimen/global_margin_standard"
+                android:gravity="center_vertical"
+                android:text="@string/functions_feedback_title"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/global_font_great"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:text="@string/functions_feedback_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:drawableLeft="@drawable/btg_btn_data_normal"
+                android:drawablePadding="@dimen/global_margin_large"
+                android:gravity="center_vertical"
+                android:text="@string/functions_data_title"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/global_font_great"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin_standard"
+                android:text="@string/functions_data_text"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

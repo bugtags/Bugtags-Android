@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".FeedbackActivity">
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/feedback_text_width"
+        android:background="@drawable/btg_bg_input"
+        android:gravity="top"
+        android:hint="@string/feedback_hint"
+        android:padding="@dimen/global_margin_standard"
+        android:textSize="@dimen/global_font_large"/>
+
+    <Button
+        android:id="@+id/postButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/global_margin_great"
+        android:background="@drawable/btg_btn_blue_rect"
+        android:onClick="onPost"
+        android:text="@string/global_send"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

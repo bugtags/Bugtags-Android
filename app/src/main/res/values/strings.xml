@@ -1,0 +1,50 @@
+<resources>
+
+    <!--global-->
+    <string name="app_name">Bugtags-Demo</string>
+    <string name="global_yes">是</string>
+    <string name="global_no">否</string>
+    <string name="global_set">设置</string>
+    <string name="global_back">返回</string>
+    <string name="global_send">提交</string>
+
+    <!--main-->
+    <string name="main_feedback">发送反馈</string>
+    <string name="main_custom">自定义继承</string>
+    <string name="main_config">SDK配置</string>
+    <string name="main_functions">功能介绍</string>
+    <string name="main_born">为移动测试而生</string>
+
+    <!--config-->
+    <string name="config_user_step">记录user steps</string>
+    <string name="config_console_log">收集console log</string>
+    <string name="config_crash_log">收集crash log</string>
+    <string name="config_crash_raise">Crash</string>
+    <string name="config_crash_raise_do">产生</string>
+    <string name="config_crash_collect">Crash 已收集</string>
+    <string name="config_crash_not_collect">Crash 未收集</string>
+    <string name="config_set_user_data">设置use data</string>
+    <string name="config_user_data_key">Key</string>
+    <string name="config_user_data_value">Value</string>
+    <string name="config_user_data_empty">Key 和 Value都不能为空</string>
+    <string name="config_set_user_data_succeed">设置成功!</string>
+
+    <!--custom-->
+    <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>
+
+    <!--function-->
+    <string name="functions_error_title">错误报告</string>
+    <string name="functions_data_title">数据统计</string>
+    <string name="functions_track_title">进度控制</string>
+    <string name="functions_feedback_title">用户反馈</string>
+    <string name="functions_error_text">报告错误从未如此轻松！只需点击错误位置，选定类型，指派给开发人员，提交。大功告成！除了能够看到错误信息之外，还可以看到设备的信息、环境以及网络状况等。</string>
+    <string name="functions_track_text">Bugtags有效地帮助您和您的公司在项目进度上得到控制，查询人员完成情况，筛选未完成的错误，及时沟通，协同工作。</string>
+    <string name="functions_data_text">强大的数据统计，设备型号、系统版本、地域、网络环境、让您掌握您的用户使用情况。</string>
+    <string name="functions_feedback_text">Bugtags集成了用户反馈功能，调取API接口，将用户的反馈提交到Bugtags系统上，第一时间了解用户的需求，进一步完善产品。</string>
+
+
+    <!--feedback-->
+    <string name="feedback_hint">请输入反馈内容</string>
+    <string name="feedback_text_empty">请输入内容</string>
+    <string name="feedback_send_succeed">反馈已发布</string>
+</resources>

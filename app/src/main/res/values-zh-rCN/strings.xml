@@ -1,0 +1,38 @@
+<resources>
+
+    <!--global-->
+    <string name="app_name">Bugtags-Demo</string>
+    <string name="global_yes">是</string>
+    <string name="global_no">否</string>
+    <string name="global_set">设置</string>
+    <string name="global_back">返回</string>
+    <string name="global_send">提交</string>
+
+    <!--main-->
+    <string name="main_config">配置SDK</string>
+    <string name="main_custom">自定义集成</string>
+    <string name="main_feedback">发送反馈</string>
+
+    <!--config-->
+    <string name="config_user_step">跟踪user steps</string>
+    <string name="config_console_log">收集console log</string>
+    <string name="config_crash_log">收集crash log</string>
+    <string name="config_crash_raise">Crash</string>
+    <string name="config_crash_raise_do">产生</string>
+    <string name="config_crash_collect">Crash 已收集</string>
+    <string name="config_crash_not_collect">Crash 未收集</string>
+    <string name="config_set_user_data">设置use data</string>
+    <string name="config_user_data_key">Key</string>
+    <string name="config_user_data_value">Value</string>
+    <string name="config_user_data_empty">Key 和 Value都不能为空</string>
+    <string name="config_set_user_data_succeed">设置成功!</string>
+
+    <!--custom-->
+    <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>
+
+
+    <!--feedback-->
+    <string name="feedback_hint">请输入反馈内容</string>
+    <string name="feedback_text_empty">请输入内容</string>
+    <string name="feedback_send_succeed">反馈已发布</string>
+</resources>
