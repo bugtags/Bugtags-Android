@@ -20,6 +20,7 @@
 
     <!--config-->
     <dimen name="config_user_data_text_width">80dp</dimen>
+    <dimen name="config_user_height">30dp</dimen>
 
     <!--custom-->
     <dimen name="custom_text_width">230dp</dimen>

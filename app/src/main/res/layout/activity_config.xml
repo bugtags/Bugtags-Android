@@ -20,8 +20,9 @@
             android:text="@string/config_user_step"/>
 
         <Button
+            android:id="@+id/userStepsButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/config_user_height"
             android:layout_marginTop="@dimen/global_margin_standard"
             android:background="@drawable/btg_btn_blue_rect"
             android:onClick="onUserStep"
@@ -42,8 +43,9 @@
             android:text="@string/config_console_log"/>
 
         <Button
+            android:id="@+id/consoleLogButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/config_user_height"
             android:layout_marginTop="@dimen/global_margin_standard"
             android:background="@drawable/btg_btn_blue_rect"
             android:onClick="onConsoleLog"
@@ -64,8 +66,9 @@
             android:text="@string/config_crash_log"/>
 
         <Button
+            android:id="@+id/crashLogButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/config_user_height"
             android:layout_marginTop="@dimen/global_margin_standard"
             android:background="@drawable/btg_btn_blue_rect"
             android:onClick="onCrashLog"
@@ -73,6 +76,7 @@
             android:textColor="@android:color/white"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,7 +90,7 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/config_user_height"
             android:layout_marginTop="@dimen/global_margin_standard"
             android:background="@drawable/btg_btn_blue_rect"
             android:onClick="onCrash"
@@ -98,7 +102,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/global_margin_standard"
+        android:layout_marginTop="@dimen/global_margin_large"
         android:orientation="vertical">
 
         <TextView
@@ -121,7 +125,7 @@
             <EditText
                 android:id="@+id/keyText"
                 android:layout_width="@dimen/config_user_data_text_width"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"/>
 
             <TextView
@@ -133,12 +137,13 @@
             <EditText
                 android:id="@+id/valueText"
                 android:layout_width="@dimen/config_user_data_text_width"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"/>
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/config_user_height"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/global_margin_standard"
                 android:background="@drawable/btg_btn_blue_rect"
                 android:onClick="onSetUseData"

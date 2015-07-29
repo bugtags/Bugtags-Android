@@ -37,6 +37,19 @@ public class ConfigActivity extends BugtagsAppCompatActivity {
 
         mKeyText = (EditText) findViewById(R.id.keyText);
         mValueText = (EditText) findViewById(R.id.valueText);
+
+        mTrackUerStep = BugTags.isTrackingUserSteps();
+        mTrackConsoleLog = BugTags.isTrackingConsoleLog();
+        mTrackCrashLog = BugTags.isTrackingCrashes();
+
+        Button userStepButton = (Button) findViewById(R.id.userStepsButton);
+        userStepButton.setText(mTrackUerStep ? R.string.global_yes : R.string.global_no);
+
+        Button consoleLogButton = (Button) findViewById(R.id.consoleLogButton);
+        consoleLogButton.setText(mTrackConsoleLog ? R.string.global_yes : R.string.global_no);
+
+        Button crashLogButton = (Button) findViewById(R.id.crashLogButton);
+        crashLogButton.setText(mTrackCrashLog ? R.string.global_yes : R.string.global_no);
     }
 
     public void onUserStep(View view) {
