@@ -18,6 +18,6 @@ public class FunctionsActivity extends BugtagsAppCompatActivity {
             getSupportActionBar().setTitle(R.string.main_functions);
         }
 
-        setContentView(R.layout.activity_functions);
+        setContentView(R.layout.activity_functions_info);
     }
 }

@@ -2,4 +2,5 @@
 <resources>
     <drawable name="btg_btn_color_normal">#ffffffff</drawable>
     <drawable name="btg_btn_color_pressed">#ffcccccc</drawable>
+    <color name="btg_color_blue">#ff229FFC</color>
 </resources>

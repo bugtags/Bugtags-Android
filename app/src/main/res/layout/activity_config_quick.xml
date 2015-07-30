@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".ConfigActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_crash_log"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:gravity="center"
+            android:text="@string/config_crash_log_code"
+            android:textColor="@color/btg_color_blue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_user_step"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:layout_marginTop="@dimen/global_margin_tiny"
+            android:gravity="center"
+            android:text="@string/config_user_step_code"
+            android:textColor="@color/btg_color_blue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_console_log"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:layout_marginTop="@dimen/global_margin_tiny"
+            android:gravity="center"
+            android:text="@string/config_console_log_code"
+            android:textColor="@color/btg_color_blue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_set_user_data"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:layout_marginTop="@dimen/global_margin_tiny"
+            android:gravity="center"
+            android:text="@string/config_set_user_data_code"
+            android:textColor="@color/btg_color_blue"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_feedback"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:layout_marginTop="@dimen/global_margin_tiny"
+            android:gravity="center"
+            android:text="@string/config_feedback_code"
+            android:textColor="@color/btg_color_blue"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_btg_log"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/config_user_height"
+            android:layout_marginTop="@dimen/global_margin_tiny"
+            android:gravity="center"
+            android:text="@string/config_btg_log_code"
+            android:textColor="@color/btg_color_blue"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

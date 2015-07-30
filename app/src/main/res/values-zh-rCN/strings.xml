@@ -9,27 +9,32 @@
     <string name="global_send">提交</string>
 
     <!--main-->
-    <string name="main_config">配置SDK</string>
-    <string name="main_custom">自定义集成</string>
     <string name="main_feedback">发送反馈</string>
+    <string name="main_custom">自定义继承</string>
+    <string name="main_config">快速配置</string>
+    <string name="main_functions">功能介绍</string>
+    <string name="main_born">为移动测试而生</string>
 
     <!--config-->
-    <string name="config_user_step">跟踪user steps</string>
-    <string name="config_console_log">收集console log</string>
-    <string name="config_crash_log">收集crash log</string>
-    <string name="config_crash_raise">Crash</string>
-    <string name="config_crash_raise_do">产生</string>
-    <string name="config_crash_collect">Crash 已收集</string>
-    <string name="config_crash_not_collect">Crash 未收集</string>
-    <string name="config_set_user_data">设置use data</string>
-    <string name="config_user_data_key">Key</string>
-    <string name="config_user_data_value">Value</string>
-    <string name="config_user_data_empty">Key 和 Value都不能为空</string>
-    <string name="config_set_user_data_succeed">设置成功!</string>
+    <string name="config_user_step">设置是否记录用户操作步骤</string>
+    <string name="config_console_log">设置是否收集控制台日志</string>
+    <string name="config_crash_log">设置是否收集Crash信息</string>
+    <string name="config_feedback">发送意见反馈</string>
+    <string name="config_set_user_data">设置自定义数据</string>
+    <string name="config_btg_log">Bugtags日志工具（不会将日志写入控制台）</string>
+    <string name="config_user_step_code">BugTags.setTrackingUserSteps(true|false);</string>
+    <string name="config_console_log_code">BugTags.setTrackingConsoleLog(true|false);</string>
+    <string name="config_crash_log_code">BugTags.setTrackingCrashes(true|false);</string>
+    <string name="config_feedback_code">BugTags.sendFeedback(\"xxx\");</string>
+    <string name="config_set_user_data_code">BugTags.setUserData(\"key\", \"value\");</string>
+    <string name="config_btg_log_code">BugTags.log(\"xxx\");</string>
 
     <!--custom-->
     <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>
 
+    <!--function-->
+    <string name="functions_intro">Bugtags是新一代的、专为移动测试而生的缺陷发现及管理工具。我们致力于改善移动App的测试流程，连接发现缺陷与提交缺陷之间的用户体验，提高测试及解决缺陷的效率。</string>
+    <string name="functions_slogan">Improve your app anytime, anywhere.</string>
 
     <!--feedback-->
     <string name="feedback_hint">请输入反馈内容</string>
