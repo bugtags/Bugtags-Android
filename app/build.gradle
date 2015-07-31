@@ -30,8 +30,8 @@ android {
 //}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library:bugtags-lib:1.0.0@aar'
-    compile 'com.bugtags.library:bugtags-core:1.0.0@aar'
+    compile 'com.bugtags.library:bugtags-lib:0.9.0@aar'
+    compile 'com.bugtags.library:bugtags-core:0.9.0@aar'
     compile 'com.mcxiaoke.volley:library:1.0.16'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.android.support:support-v4:22.2.0'
