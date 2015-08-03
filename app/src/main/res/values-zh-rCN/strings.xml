@@ -22,12 +22,12 @@
     <string name="config_feedback">发送意见反馈</string>
     <string name="config_set_user_data">设置自定义数据</string>
     <string name="config_btg_log">Bugtags日志工具（不会将日志写入控制台）</string>
-    <string name="config_user_step_code">BugTags.setTrackingUserSteps(true|false);</string>
-    <string name="config_console_log_code">BugTags.setTrackingConsoleLog(true|false);</string>
-    <string name="config_crash_log_code">BugTags.setTrackingCrashes(true|false);</string>
-    <string name="config_feedback_code">BugTags.sendFeedback(\"xxx\");</string>
-    <string name="config_set_user_data_code">BugTags.setUserData(\"key\", \"value\");</string>
-    <string name="config_btg_log_code">BugTags.log(\"xxx\");</string>
+    <string name="config_user_step_code">Bugtags.setTrackingUserSteps(true|false);</string>
+    <string name="config_console_log_code">Bugtags.setTrackingConsoleLog(true|false);</string>
+    <string name="config_crash_log_code">Bugtags.setTrackingCrashes(true|false);</string>
+    <string name="config_feedback_code">Bugtags.sendFeedback(\"xxx\");</string>
+    <string name="config_set_user_data_code">Bugtags.setUserData(\"key\", \"value\");</string>
+    <string name="config_btg_log_code">Bugtags.log(\"xxx\");</string>
 
     <!--custom-->
     <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>

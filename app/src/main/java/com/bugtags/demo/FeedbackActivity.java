@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.bugtags.library.BugTags;
+import com.bugtags.library.Bugtags;
 import com.bugtags.wrapper.BugtagsAppCompatActivity;
 
 /**
@@ -37,7 +37,7 @@ public class FeedbackActivity extends BugtagsAppCompatActivity {
             return;
         }
 
-        BugTags.sendFeedback(message);
+        Bugtags.sendFeedback(message);
         Toast.makeText(this, R.string.feedback_send_succeed, Toast.LENGTH_SHORT).show();
 
         finish();

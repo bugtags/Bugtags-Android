@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.bugtags.library.BugTags;
+import com.bugtags.library.Bugtags;
 
 /**
  * Created by bugtags.com on 15/7/28.
@@ -22,7 +22,7 @@ public class CustomActivity extends Activity {
 
         setContentView(R.layout.activity_custom);
 
-        BugTags.onCreate(this);
+        Bugtags.onCreate(this);
     }
 
     /**
@@ -30,7 +30,7 @@ public class CustomActivity extends Activity {
      */
     protected void onResume() {
         super.onResume();
-        BugTags.onResume(this);
+        Bugtags.onResume(this);
     }
 
     /**
@@ -38,7 +38,7 @@ public class CustomActivity extends Activity {
      */
     protected void onPause() {
         super.onPause();
-        BugTags.onPause(this);
+        Bugtags.onPause(this);
     }
 
     /**
@@ -46,14 +46,14 @@ public class CustomActivity extends Activity {
      */
     protected void onDestroy() {
         super.onDestroy();
-        BugTags.onDestroy(this);
+        Bugtags.onDestroy(this);
     }
 
     /**
      * 回调5
      */
     public boolean dispatchTouchEvent(MotionEvent var1) {
-        BugTags.onDispatchTouchEvent(this, var1);
+        Bugtags.onDispatchTouchEvent(this, var1);
         return super.dispatchTouchEvent(var1);
     }
 

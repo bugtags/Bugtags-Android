@@ -2,8 +2,6 @@ package com.bugtags.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.bugtags.wrapper.BugtagsAppCompatActivity;
@@ -14,9 +12,6 @@ public class MainActivity extends BugtagsAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if (getSupportActionBar() != null) {
-        }
     }
 
     public void onFeedback(View view) {
