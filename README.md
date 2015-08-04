@@ -23,7 +23,7 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-or invoke the callbacks manually, see in [CustomActivity](#CustomActivity).
+or invoke the callbacks manually, see in [CustomActivity](#customactivity).
 
 4. For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
@@ -73,7 +73,7 @@ or invoke the callbacks manually, see in [CustomActivity](#CustomActivity).
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-or invoke the callbacks manually, see in: [CustomActivity](#CustomActivity).
+or invoke the callbacks manually, see in: [CustomActivity](#customactivity).
 
 #CustomActivity
 ```java
@@ -115,7 +115,10 @@ or invoke the callbacks manually, see in: [CustomActivity](#CustomActivity).
               return super.dispatchTouchEvent(event);
           }
       }
-      ```
+```
+
+
+
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://github.com
 [Android Developer Site]:http://developer.android.com/tools/studio/index.html
