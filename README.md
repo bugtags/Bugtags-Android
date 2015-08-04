@@ -1,13 +1,15 @@
 Bugtags Android SDK
 ===================
-[Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically.
+#中文文档请访问[README_CN](https://github.com/bugtags/Bugtags-Android/blob/dev/README_CN.md)
+
+[Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically. Improve your apps anywhere, anytime.
 
 [Create a free account](http://bugtag.com/) and invite your team to improve your apps.
-> If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK.
+> If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK
+
 
 # Installation:
 -----
-
 
 ### Gradle
 * 1.The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
