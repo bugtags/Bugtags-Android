@@ -13,7 +13,7 @@ compile 'com.bugtags.library:bugtags-lib:1+'
 ```
 - 2.Then initialize Bugtags in your application’s onCreate() method:
 ```java
-Bugtags.start("59a5d4fb43a3f66d12bdf1827fb79c5b", this, Bugtags.BTGInvocationEventBubble);
+Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
 - 3.Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
@@ -102,7 +102,7 @@ Bugtags.start("59a5d4fb43a3f66d12bdf1827fb79c5b", this, Bugtags.BTGInvocationEve
 - 4.Add the following init call to your application's onCreate() method
 
   ```java
-    Bugtags.start("59a5d4fb43a3f66d12bdf1827fb79c5b", this, Bugtags.BTGInvocationEventBubble);
+    Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   ```
 - 5.Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
