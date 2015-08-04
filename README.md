@@ -7,16 +7,17 @@ Bugtags Android SDK
 
 #Installation:
 -----
+
 ###Gradle
-1. The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
+1.  The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
 ```gradle
 compile 'com.bugtags.library:bugtags-lib:0.9.0'
 ```
-2. Then initialize Bugtags in your application’s onCreate() method:
+2.  Then initialize Bugtags in your application’s onCreate() method:
 ```java
 Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
-3. Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
+3.  Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
  BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
  BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
@@ -25,7 +26,7 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
 or invoke the callbacks manually, see in [CustomActivity](#customactivity).
 
-4. For more information about Android Studio and gradle, please visit: [Android Developer Site].
+4.  For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
 ###Eclipse
 1. Download the [SDK for Eclipse] and add it to your workspace then add it as a dependency in your application's project. The eclipse project requires the following library dependencies:
@@ -75,7 +76,7 @@ or invoke the callbacks manually, see in [CustomActivity](#customactivity).
 ```
 or invoke the callbacks manually, see in: [CustomActivity](#customactivity).
 
-#CustomActivity
+##CustomActivity
 ```java
       package your.package.name;
       import android.app.Activity;
@@ -120,5 +121,5 @@ or invoke the callbacks manually, see in: [CustomActivity](#customactivity).
 
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
-[Bugtags]:http://github.com
+[Bugtags]:http://bugtags.com
 [Android Developer Site]:http://developer.android.com/tools/studio/index.html
