@@ -3,7 +3,7 @@ Bugtags Android SDK
 [Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically.
 
 [Create a free account](http://bugtag.com/) and invite your team to improve your apps.
-> If you are using Eclipse for Android development, visit: [SDK for Eclipse].
+> If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK.
 
 # Installation:
 -----
