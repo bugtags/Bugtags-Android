@@ -1,6 +1,7 @@
 Bugtags Android SDK
 ===================
-#中文文档请访问[README_CN](https://github.com/bugtags/Bugtags-Android/blob/dev/README_CN.md)
+###中文文档请移步[README_CN](https://github.com/bugtags/Bugtags-Android/blob/dev/README_CN.md)
+###QQ tribe for help: 479166560
 
 [Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically. Improve your apps anywhere, anytime.
 
