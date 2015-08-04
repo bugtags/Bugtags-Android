@@ -9,7 +9,7 @@ Bugtags Android SDK
 ###Gradle
 - 1.The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files.
 ```gradle
-compile 'com.bugtags.library:bugtags-lib:1+'
+compile 'com.bugtags.library:bugtags-lib:0.9.0'
 ```
 - 2.Then initialize Bugtags in your application’s onCreate() method:
 ```java
@@ -106,10 +106,10 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   ```
 - 5.Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
- BugtagsAppCompatActivity: extends android.support.v7.app.AppCompatActivity
- BugtagsActionBarActivity: extends android.support.v7.app.ActionBarActivity
- BugtagsActivity: extends android.app.activity
- BugtagsFragmentActivity: extends android.support.v4.app.FragmentActivity
+ BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
+ BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
+ BugtagsActivity: This extends android.app.activity
+ BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
