@@ -17,7 +17,7 @@ compile 'com.bugtags.library:bugtags-lib:0.9.0'
 ```java
 Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
-3. Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
+Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
  BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
  BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
