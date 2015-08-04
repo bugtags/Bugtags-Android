@@ -5,30 +5,30 @@ Bugtags Android SDK
 [Create a free account](http://bugtag.com/) and invite your team to improve your apps.
 > If you are using Eclipse for Android development, visit: [SDK for Eclipse].
 
-#Installation:
+# Installation:
 -----
 
-###Gradle
-1.  The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
+### Gradle
+1. The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
 ```gradle
 compile 'com.bugtags.library:bugtags-lib:0.9.0'
 ```
-2.  Then initialize Bugtags in your application’s onCreate() method:
+2. Then initialize Bugtags in your application’s onCreate() method:
 ```java
 Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
-3.  Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
+3. Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
  BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
  BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-or invoke the callbacks manually, see in [CustomActivity](#customactivity).
+  or invoke the callbacks manually, see in [CustomActivity](#customactivity).
 
-4.  For more information about Android Studio and gradle, please visit: [Android Developer Site].
+  For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
-###Eclipse
+### Eclipse
 1. Download the [SDK for Eclipse] and add it to your workspace then add it as a dependency in your application's project. The eclipse project requires the following library dependencies:
 
   ```
@@ -76,7 +76,7 @@ or invoke the callbacks manually, see in [CustomActivity](#customactivity).
 ```
 or invoke the callbacks manually, see in: [CustomActivity](#customactivity).
 
-##CustomActivity
+##	CustomActivity
 ```java
       package your.package.name;
       import android.app.Activity;
