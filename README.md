@@ -23,9 +23,9 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-or invoke the callbacks manually, see in [CustomActivity].
+or invoke the callbacks manually, see in [CustomActivity](#CustomActivity).
 
-4. For more information about Androis Studio and gradle, please visit: [Android Developer Site].
+4. For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
 ###Eclipse
 1. Download the [SDK for Eclipse] and add it to your workspace then add it as a dependency in your application's project. The eclipse project requires the following library dependencies:
@@ -73,10 +73,9 @@ or invoke the callbacks manually, see in [CustomActivity].
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-or invoke the callbacks manually, see in: [CustomActivity].
+or invoke the callbacks manually, see in: [CustomActivity](#CustomActivity).
 
-
-#CustomActivity:
+#CustomActivity
 ```java
       package your.package.name;
       import android.app.Activity;
@@ -117,7 +116,6 @@ or invoke the callbacks manually, see in: [CustomActivity].
           }
       }
       ```
-[CustomActivity]:#CustomActivity
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://github.com
 [Android Developer Site]:http://developer.android.com/tools/studio/index.html
