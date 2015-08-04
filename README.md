@@ -23,47 +23,49 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
-  Or invoke the callbacks manually:
-  ```java
-  package your.package.name;
-  import android.app.Activity;
-  import android.os.Bundle;
-  import android.view.MotionEvent;
+or invoke the callbacks manually:
 
-  import com.bugtags.library.Bugtags;
+  ###CustomActivity
+    ```java
+    package your.package.name;
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.view.MotionEvent;
 
-  public class CustomActivity extends Activity{
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-          super.onCreate(savedInstanceState);
-          Bugtags.onCreate(this);
-      }
+    import com.bugtags.library.Bugtags;
 
-      @Override
-      protected void onResume() {
-          super.onResume();
-          Bugtags.onResume(this);
-      }
+    public class CustomActivity extends Activity{
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Bugtags.onCreate(this);
+        }
 
-      @Override
-      protected void onPause() {
-          super.onPause();
-          Bugtags.onPause(this);
-      }
+        @Override
+        protected void onResume() {
+            super.onResume();
+            Bugtags.onResume(this);
+        }
 
-      @Override
-      protected void onDestroy() {
-          super.onDestroy();
-          Bugtags.onDestroy(this);
-      }
+        @Override
+        protected void onPause() {
+            super.onPause();
+            Bugtags.onPause(this);
+        }
 
-      @Override
-      public boolean dispatchTouchEvent(MotionEvent event) {
-          Bugtags.onDispatchTouchEvent(this, event);
-          return super.dispatchTouchEvent(event);
-      }
-  }
-  ```
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            Bugtags.onDestroy(this);
+        }
+
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event) {
+            Bugtags.onDispatchTouchEvent(this, event);
+            return super.dispatchTouchEvent(event);
+        }
+    }
+    ```
 - For more information about Androis Studio and gradle, please visit: [Android Developer Site]
 
 ###Eclipse
@@ -112,6 +114,7 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
  BugtagsActivity: This extends android.app.activity
  BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
 ```
+or invoke the callbacks manually, see in: [CustomActivity](###CustomActivity)
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://github.com
