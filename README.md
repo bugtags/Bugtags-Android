@@ -1,6 +1,6 @@
 Bugtags Android SDK
 ===================
-[Bugtags] for Android, reports bugs and their diagnoses information in one step, captures crashes automatically.
+[Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically.
 
 [Create a free account](http://bugtag.com/) and invite your team to improve your apps.
 > If you are using Eclipse for Android development, visit: [SDK for Eclipse].
@@ -8,16 +8,17 @@ Bugtags Android SDK
 # Installation:
 -----
 
+
 ### Gradle
-1. The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
+* 1.The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
 ```gradle
 compile 'com.bugtags.library:bugtags-lib:0.9.0'
 ```
-2. Then initialize Bugtags in your application’s onCreate() method:
+* 2.Then initialize Bugtags in your application’s onCreate() method:
 ```java
 Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 ```
-3. Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
+* 3.Change your base activity to extend one of the following activities, to enable automatically tracking user steps:
 ```java
  BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
  BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
