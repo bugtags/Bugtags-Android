@@ -15,7 +15,7 @@ Bugtags Android SDK
 ### Gradle
 * 1.The SDK is available through Maven Central. In your build.gradle file, add the following dependency, then sync your gradle files:
 ```gradle
-compile 'com.bugtags.library:bugtags-lib:0.9.0'
+compile 'com.bugtags.library:bugtags-lib:1.0.0'
 ```
 * 2.Then initialize Bugtags in your application’s onCreate() method:
 ```java

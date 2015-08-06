@@ -11,7 +11,7 @@ Bugtags Android SDK
 ### Gradle
 * 1.SDK已经上传到Maven Central仓库， 在你项目的build.gradle 文件中添加以下依赖, 同步gradle，就会自动下载SDK：
 ```gradle
-compile 'com.bugtags.library:bugtags-lib:0.9.0'
+compile 'com.bugtags.library:bugtags-lib:1.0.0'
 ```
 * 2.在你的Application的onCreate() 方法中初始化Bugtags：
 ```java
