@@ -28,6 +28,7 @@
     <string name="config_feedback_code">Bugtags.sendFeedback(\"xxx\");</string>
     <string name="config_set_user_data_code">Bugtags.setUserData(\"key\", \"value\");</string>
     <string name="config_btg_log_code">Bugtags.log(\"xxx\");</string>
+    <string name="main_crash">产生一个闪退</string>
 
     <!--custom-->
     <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>

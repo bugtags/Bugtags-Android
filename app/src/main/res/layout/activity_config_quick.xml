@@ -31,9 +31,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/global_margin_standard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_standard"
         android:orientation="vertical">
 
         <TextView
@@ -115,6 +115,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -134,7 +135,16 @@
             android:text="@string/config_btg_log_code"
             android:textColor="@color/btg_color_blue"/>
 
-
     </LinearLayout>
+
+    <Button
+        android:padding="@dimen/global_font_big"
+        android:id="@+id/crashButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_great"
+        android:background="@drawable/btg_btn_blue_rect"
+        android:text="@string/main_crash"
+        android:textColor="@android:color/white"/>
 
 </LinearLayout>

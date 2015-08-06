@@ -12,12 +12,23 @@ android {
         versionName "0.9.0"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("btg.jks")
+            storePassword "Bugtags@2015"
+            keyAlias "bugtags"
+            keyPassword "Bugtags@2015"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

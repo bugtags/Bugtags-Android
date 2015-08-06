@@ -1,6 +1,8 @@
 package com.bugtags.demo;
 
 import android.os.Bundle;
+import android.view.View;
+
 import com.bugtags.wrapper.BugtagsAppCompatActivity;
 
 /**
@@ -19,5 +21,11 @@ public class ConfigActivity extends BugtagsAppCompatActivity {
 
         setContentView(R.layout.activity_config_quick);
 
+        findViewById(R.id.crashButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new RuntimeException("this is a demo crash");
+            }
+        });
     }
 }
