@@ -30,3 +30,4 @@ proguard/
 # jetbrain
 .idea/
 .navigation/
+app/build_release.gradle
