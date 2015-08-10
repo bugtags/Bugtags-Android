@@ -77,6 +77,15 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
 # Usage:
 ![How to use](screenshot/usage.gif)
 
+# Explore:
+1. Invoke event:
+  * BTGInvocationEventBubble: Show floating circle in app.
+  * BTGInvocationEventShake: Show floating circle by shake.
+  * BTGInvocationEventNone: Show no floating circle, capture crash bug only(if allow), this is recommended to be used in release build.
+2. Send caught exception:
+  * Bugtags.sendException(Throwable ex);
+3. Send feedback:
+  * Bugtags.sendFeedback(String msg);
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com

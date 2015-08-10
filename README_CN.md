@@ -73,9 +73,18 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   ```
     关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
-# 使用截图:
-![如何使用](screenshot/usage.jpeg)
+# 使用截屏:
+![如何使用](screenshot/usage.gif)
 
+# 高级选项:
+1. 呼出方式Invoke event:
+  * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
+  * BTGInvocationEventShake: 通过摇一摇呼出Bugtags。
+  * BTGInvocationEventNone: 不显示悬浮小球，只收集崩溃信息（如果允许）。
+2. 手动发送Exception:
+  * Bugtags.sendException(Throwable ex);
+3. 发送文字反馈信息:
+  * Bugtags.sendFeedback(String msg);
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com
