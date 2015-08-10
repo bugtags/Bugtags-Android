@@ -75,10 +75,7 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
 # Usage:
-![Found bug](screenshot/0.jpg)
-![Tag to describe](screenshot/1.jpg)
-![Manipulate tag](screenshot/2.jpg)
-![Sumit](screenshot/3.jpg)
+![How to use](screenshot/usage.gif)
 
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse

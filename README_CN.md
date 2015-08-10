@@ -71,13 +71,10 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
             }
         }
   ```
-关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
+    关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
 # 使用截图:
-![发现bug](screenshot/0.jpg)
-![标签描述](screenshot/1.jpg)
-![操作tag](screenshot/2.jpg)
-![提交](screenshot/3.jpg)
+![如何使用](screenshot/usage.jpeg)
 
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
