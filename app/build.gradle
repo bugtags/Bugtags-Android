@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+def VERSION_NAME = "1.0.1"
 
 android {
     compileSdkVersion 22
@@ -9,7 +10,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 2
-        versionName "1.0.1"
+        versionName VERSION_NAME
     }
 
     buildTypes {
@@ -26,5 +27,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library:bugtags-lib:1.0.1'
+    compile 'com.bugtags.library:bugtags-lib:' + VERSION_NAME
 }
