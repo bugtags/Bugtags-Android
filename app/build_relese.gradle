@@ -9,26 +9,15 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
-        versionName "0.9.0"
-    }
-
-    signingConfigs {
-        release {
-            storeFile file("btg.jks")
-            storePassword "Bugtags@2015"
-            keyAlias "bugtags"
-            keyPassword "Bugtags@2015"
-        }
+        versionName "1.0.0"
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -37,5 +26,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library:bugtags-lib:1.0.0'
+    compile 'com.bugtags.library:bugtags-lib:1.0.1'
 }
+
+// dependencies {
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//     compile 'com.mcxiaoke.volley:library:1.0.16'
+//     compile 'com.nineoldandroids:library:2.4.0'
+//     compile 'com.android.support:support-v4:22.2.0'
+//     compile 'com.android.support:appcompat-v7:22.2.0'
+//    compile 'com.bugtags.library:bugtags-lib:1+@aar'
+//     compile 'com.bugtags.library:bugtags-core:1+@aar'
+//}
