@@ -6,12 +6,17 @@ Bugtags Android SDK
 [免费注册](http://bugtags.com/)，邀请你的团队成员来一起来改善你的app。
 > 如果你使用Eclipse来开发Android App, 访问: [SDK for Eclipse]下载SDK.
 
+# 功能
+1. 一键截屏，使用标签进行bug描述.
+2. 自动获取设备与app环境参数
+3. 自动捕捉闪退bug
+4. bug生命周期管理
+
 # 安装集成:
------
 ### Gradle
 * 1.SDK已经上传到Maven Central仓库， 在你项目的build.gradle 文件中添加以下依赖, 同步gradle，就会自动下载SDK：
 ```gradle
-compile 'com.bugtags.library:bugtags-lib:1.0.0'
+compile 'com.bugtags.library:bugtags-lib:1.0.1'
 ```
 * 2.在你的Application的onCreate() 方法中初始化Bugtags：
 ```java
@@ -24,100 +29,62 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   BugtagsActivity: 继承自android.app.activity
   BugtagsFragmentActivity: 继承自android.support.v4.app.FragmentActivity
 ```
-  也可以在你的Activity中手动添加回调，请参考：[CustomActivity](#customactivity).
-
-  关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
-
-
-### Eclipse
-1. [下载SDK](https://github.com/bugtags/Bugtags-Android-Eclipse)并添加到你的工作空间，然后将其添加为你的应用程序的项目的依赖。 Eclipse项目需要以下库的依赖关系：
-
-  ```
-  Android v4 support library
-  Android v7 app compat support library
-  ```
-2. 在 AndroidManifest.xml中添加以下权限：
-
-  ```xml
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.READ_LOGS"/>
-  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-  ```
-3. 在AndroidManifest.xml中添加所需的activity和服务：
-
-  ```xml
-    <activity android:name="com.bugtags.library.BugtagsActivity"
-              android:configChanges="keyboardHidden|orientation|screenSize"
-              android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
-  <service android:name="com.bugtags.library.BugtagsService"/>
-  <receiver android:name="com.bugtags.library.BugtagsReceiver">
-              <intent-filter>
-                  <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-              </intent-filter>
-  </receiver>
-  ```
-4. 在你的Application的onCreate() 方法中初始化Bugtags：
+  *也可以在你的Activity中手动添加回调，请参考：CustomActivity:*
 
   ```java
-    Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
+        package your.package.name;
+        import android.app.Activity;
+        import android.os.Bundle;
+        import android.view.MotionEvent;
+
+        import com.bugtags.library.Bugtags;
+
+        public class CustomActivity extends Activity{
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                Bugtags.onCreate(this);
+            }
+
+            @Override
+            protected void onResume() {
+                super.onResume();
+                Bugtags.onResume(this);
+            }
+
+            @Override
+            protected void onPause() {
+                super.onPause();
+                Bugtags.onPause(this);
+            }
+
+            @Override
+            protected void onDestroy() {
+                super.onDestroy();
+                Bugtags.onDestroy(this);
+            }
+
+            @Override
+            public boolean dispatchTouchEvent(MotionEvent event) {
+                Bugtags.onDispatchTouchEvent(this, event);
+                return super.dispatchTouchEvent(event);
+            }
+        }
   ```
-5. 让你的Activity中继承以下Activity, 则可自动跟踪用户步骤：
-```java
- BugtagsAppCompatActivity: This extends android.support.v7.app.AppCompatActivity
- BugtagsActionBarActivity: This extends android.support.v7.app.ActionBarActivity
- BugtagsActivity: This extends android.app.activity
- BugtagsFragmentActivity: This extends android.support.v4.app.FragmentActivity
-```
-也可以在你的Activity中手动添加回调，请参考：[CustomActivity](#customactivity).
+    关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
-##	CustomActivity
-```java
-      package your.package.name;
-      import android.app.Activity;
-      import android.os.Bundle;
-      import android.view.MotionEvent;
+# 使用截屏:
+![如何使用](screenshot/usage.gif)
 
-      import com.bugtags.library.Bugtags;
-
-      public class CustomActivity extends Activity{
-          @Override
-          protected void onCreate(Bundle savedInstanceState) {
-              super.onCreate(savedInstanceState);
-              Bugtags.onCreate(this);
-          }
-
-          @Override
-          protected void onResume() {
-              super.onResume();
-              Bugtags.onResume(this);
-          }
-
-          @Override
-          protected void onPause() {
-              super.onPause();
-              Bugtags.onPause(this);
-          }
-
-          @Override
-          protected void onDestroy() {
-              super.onDestroy();
-              Bugtags.onDestroy(this);
-          }
-
-          @Override
-          public boolean dispatchTouchEvent(MotionEvent event) {
-              Bugtags.onDispatchTouchEvent(this, event);
-              return super.dispatchTouchEvent(event);
-          }
-      }
-```
+# 高级选项:
+1. 呼出方式Invoke event:
+  * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
+  * BTGInvocationEventShake: 通过摇一摇呼出Bugtags。
+  * BTGInvocationEventNone: 不显示悬浮小球，只收集崩溃信息（如果允许）。
+2. 手动发送Exception:
+  * Bugtags.sendException(Throwable ex);
+3. 发送文字反馈信息:
+  * Bugtags.sendFeedback(String msg);
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com
