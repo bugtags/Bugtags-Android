@@ -19,7 +19,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_crash_log"/>
+            android:text="@string/config_crash_log"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +40,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_user_step"/>
+            android:text="@string/config_user_step"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +62,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_console_log"/>
+            android:text="@string/config_console_log"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +84,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_set_user_data"/>
+            android:text="@string/config_set_user_data"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,7 +107,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_feedback"/>
+            android:text="@string/config_feedback"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -125,7 +130,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_btg_log"/>
+            android:text="@string/config_btg_log"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -138,12 +144,12 @@
     </LinearLayout>
 
     <Button
-        android:padding="@dimen/global_font_big"
         android:id="@+id/crashButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/global_margin_great"
         android:background="@drawable/btg_btn_blue_rect"
+        android:padding="@dimen/global_font_big"
         android:text="@string/main_crash"
         android:textColor="@android:color/white"/>
 

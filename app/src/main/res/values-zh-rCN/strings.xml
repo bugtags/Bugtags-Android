@@ -30,7 +30,7 @@
     <string name="config_btg_log_code">Bugtags.log(\"xxx\");</string>
 
     <!--custom-->
-    <string name="custom_hint">参考CustomActivity，在你的Activity基类的如下5个方法中添加回调，就可以正常使用:Bugtags：\nonCreate();\nonResume();\nonPause();\nonDestroy();\ndispatchTouchEvent();</string>
+    <string name="custom_hint">参照BaseActivity，在你的Activity基类的如下3个方法中添加回调，就可以正常使用:Bugtags：\nonResume();\nonPause();\ndispatchTouchEvent();</string>
 
     <!--function-->
     <string name="functions_intro">Bugtags是新一代的、专为移动测试而生的缺陷发现及管理工具。我们致力于改善移动App的测试流程，连接发现缺陷与提交缺陷之间的用户体验，提高测试及解决缺陷的效率。</string>
