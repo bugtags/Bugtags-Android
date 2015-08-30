@@ -44,29 +44,6 @@ dependencies {
 
 ```
 ## Step 2:
-* Create subclass of Application，initialize Bugtags in onCreate() method:
-```java
-public class MyApplication extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        //initialize here
-        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
-    }
-}
-```
-* Modify AndroidManifest.xml，use MyApplication:
-```xml
-<application
-    android:name=".MyApplication"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-    ....
-</application>
-```
-
-## Step 3:
 * Add three callbacks in your base Activity class:
 ```java
       package your.package.name;
@@ -100,6 +77,30 @@ public class MyApplication extends Application {
           }
       }
 ```
+
+## Step 3:
+* Create subclass of Application，initialize Bugtags in onCreate() method:
+```java
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //initialize here
+        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
+    }
+}
+```
+* Modify AndroidManifest.xml，use MyApplication:
+```xml
+<application
+    android:name=".MyApplication"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme" >
+    ....
+</application>
+```
+
   For more information about Android Studio and gradle, please visit: [Android Developer Site].
 
 ## There you go!
@@ -116,6 +117,9 @@ public class MyApplication extends Application {
   * Bugtags.sendException(Throwable ex);
 3. Send feedback:
   * Bugtags.sendFeedback(String msg);
+
+# License
+This demo is [BSD-licensed](LICENSE). 
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com

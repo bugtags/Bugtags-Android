@@ -41,29 +41,6 @@ dependencies {
 ```
 
 ## 第二步：
-* 继承Application，在onCreate() 方法中初始化Bugtags：
-```java
-public class MyApplication extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        //在这里初始化
-        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
-    }
-}
-```
-* 修改AndroidManifest.xml，使用MyApplication类,例如：
-```xml
-<application
-    android:name=".MyApplication"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-    ....
-</application>
-```
-
-## 第三步：
 * 在你的Activity基类中添加3个回调：
 ```java
     package your.package.name;
@@ -97,6 +74,30 @@ public class MyApplication extends Application {
         }
     }
 ```
+
+## 第三步：
+* 继承Application，在onCreate() 方法中初始化Bugtags：
+```java
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //在这里初始化
+        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
+    }
+}
+```
+* 修改AndroidManifest.xml，使用MyApplication类,例如：
+```xml
+<application
+    android:name=".MyApplication"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme" >
+    ....
+</application>
+```
+
 关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
 # 使用截屏
@@ -111,6 +112,9 @@ public class MyApplication extends Application {
   * Bugtags.sendException(Throwable ex);
 3. 发送文字反馈信息:
   * Bugtags.sendFeedback(String msg);
+
+# License
+This demo is [BSD-licensed](LICENSE). 
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com
