@@ -114,7 +114,7 @@ public class MyApplication extends Application {
   * Bugtags.sendFeedback(String msg);
 
 # License
-This demo is [BSD-licensed](LICENSE). 
+This demo is [BSD-licensed](LICENSE).
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com

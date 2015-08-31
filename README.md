@@ -6,7 +6,13 @@ Bugtags Android SDK
 [Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically. Improve your apps anywhere, anytime.
 
 [Create a free account](http://bugtags.com/) and invite your team to improve your apps.
-> If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK
+> If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK.
+
+> Notice: You need a invitation code to join our system, just send me a email via <a href="mailto:he.changbin@bugtags.com">my work mail</a>.
+
+> We are going to support English language in September.
+
+
 
 # Features
 1. Take snapshot of bug, add tags to describe the bug.
@@ -119,7 +125,7 @@ public class MyApplication extends Application {
   * Bugtags.sendFeedback(String msg);
 
 # License
-This demo is [BSD-licensed](LICENSE). 
+This demo is [BSD-licensed](LICENSE).
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com
