@@ -10,9 +10,10 @@ Bugtags Android SDK
 
 > Notice: You need a invitation code to join our system, just send me a email via <a href="mailto:he.changbin@bugtags.com">my work mail</a>.
 
+> Bugtags also support [iOS](https://github.com/bugtags/Bugtags-iOS) !
+
+
 > We are going to support English language in September.
-
-
 
 # Features
 1. Take snapshot of bug, add tags to describe the bug.
