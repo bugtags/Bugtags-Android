@@ -5,6 +5,9 @@ Bugtags Android SDK
 [Bugtags]，为移动测试而生，随时随地改善你的移动应用。只需一步，提交bug及其上下文数据，自动捕捉崩溃，让修复bug更简单。
 
 [免费注册](http://bugtags.com/)，邀请你的团队成员来一起来改善你的app。
+
+下载demo app: [DEMO.apk](screenshot/demo.apk)
+
 > 如果你使用Eclipse来开发Android App, 访问: [SDK for Eclipse]下载SDK.
 
 # 功能
