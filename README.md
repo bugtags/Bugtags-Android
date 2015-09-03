@@ -51,8 +51,12 @@ allprojects {
 dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
-
 ```
+> The latest version is: **1.0.4**, you can also add dependency with specific version:
+
+> compile 'com.bugtags.library:bugtags-lib:1.0.4'
+
+
 ## Step 2:
 * Add three callbacks in your base Activity class:
 ```java

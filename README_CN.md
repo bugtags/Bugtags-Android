@@ -43,6 +43,10 @@ dependencies {
 }
 ```
 
+> 最新版本是: **1.0.4**，你也可以在添加依赖时使用明确的版本，
+
+> compile 'com.bugtags.library:bugtags-lib:1.0.4'
+
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
 ```java
