@@ -1,5 +1,6 @@
 Bugtags Android SDK
 ===================
+[ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
 ###中文文档请移步[README_CN](README_CN.md)
 ###QQ tribe for help: 479166560
 
@@ -131,6 +132,20 @@ public class MyApplication extends Application {
   * Bugtags.sendException(Throwable ex);
 3. Send feedback:
   * Bugtags.sendFeedback(String msg);
+
+# Change log
+
+2015.09.03    1.0.4    performance improving
+
+2015.08.26    1.0.3    send progress, simplify dependency, improve integration
+
+2015.08.20    1.0.2    performance improving
+
+2015.08.15    1.0.1    bug fix
+
+2015.08.07    1.0.0    official release
+
+2015.08.01    0.9.0    pre-release
 
 # License
 This demo is [BSD-licensed](LICENSE).
