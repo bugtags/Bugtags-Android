@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/bugtags/Bugtags-Android.svg?branch=master)](http://www.android-gems.com/lib/bugtags/Bugtags-Android)
+
 Bugtags Android SDK
 ===================
 [ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
