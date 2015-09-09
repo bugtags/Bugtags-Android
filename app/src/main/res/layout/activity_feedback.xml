@@ -11,6 +11,7 @@
               tools:context=".FeedbackActivity">
 
     <EditText
+        android:textColor="@android:color/black"
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="@dimen/feedback_text_width"

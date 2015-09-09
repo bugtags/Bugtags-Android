@@ -1,9 +1,14 @@
 Bugtags Android SDK
 ===================
+[ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
 ###帮助QQ群: 479166560
+
 [Bugtags]，为移动测试而生，随时随地改善你的移动应用。只需一步，提交bug及其上下文数据，自动捕捉崩溃，让修复bug更简单。
 
 [免费注册](http://bugtags.com/)，邀请你的团队成员来一起来改善你的app。
+
+下载demo app: [DEMO.apk](screenshot/demo.apk)
+
 > 如果你使用Eclipse来开发Android App, 访问: [SDK for Eclipse]下载SDK.
 
 # 功能
@@ -12,71 +17,101 @@ Bugtags Android SDK
 3. 自动捕捉闪退bug
 4. bug生命周期管理
 
-# 安装集成:
-### Gradle
-* 1.SDK已经上传到Maven Central仓库， 在你项目的build.gradle 文件中添加以下依赖, 同步gradle，就会自动下载SDK：
+# 使用gradle安装集成
+
+## 第一步：
+* 在项目的build.gradle（项目最外层的build.gradle文件，所谓的Top-level build file）设置repositories：
 ```gradle
-compile 'com.bugtags.library:bugtags-lib:1.0.1'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+allprojects {
+    repositories {
+        jcenter() //注：repository 1
+        mavenCentral()  //注：repository 2
+    }
+}
 ```
-* 2.在你的Application的onCreate() 方法中初始化Bugtags：
+* 在模块的build.gradle添加依赖：
+```gradle
+dependencies {
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+}
+```
+
+> 最新版本是: **1.0.4**，你也可以在添加依赖时使用明确的版本，
+
+> compile 'com.bugtags.library:bugtags-lib:1.0.4'
+
+## 第二步：
+* 在你的Activity基类中添加3个回调：
 ```java
-Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
-```
-* 3.让你的Activity中继承以下Activity，即可自动跟踪用户步骤：
-```java
-  BugtagsAppCompatActivity: 继承自 android.support.v7.app.AppCompatActivity
-  BugtagsActionBarActivity: 继承自android.support.v7.app.ActionBarActivity
-  BugtagsActivity: 继承自android.app.activity
-  BugtagsFragmentActivity: 继承自android.support.v4.app.FragmentActivity
-```
-  *也可以在你的Activity中手动添加回调，请参考：CustomActivity:*
+    package your.package.name;
 
-  ```java
-        package your.package.name;
-        import android.app.Activity;
-        import android.os.Bundle;
-        import android.view.MotionEvent;
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.view.MotionEvent;
 
-        import com.bugtags.library.Bugtags;
+    import com.bugtags.library.Bugtags;
 
-        public class CustomActivity extends Activity{
-            @Override
-            protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                Bugtags.onCreate(this);
-            }
-
-            @Override
-            protected void onResume() {
-                super.onResume();
-                Bugtags.onResume(this);
-            }
-
-            @Override
-            protected void onPause() {
-                super.onPause();
-                Bugtags.onPause(this);
-            }
-
-            @Override
-            protected void onDestroy() {
-                super.onDestroy();
-                Bugtags.onDestroy(this);
-            }
-
-            @Override
-            public boolean dispatchTouchEvent(MotionEvent event) {
-                Bugtags.onDispatchTouchEvent(this, event);
-                return super.dispatchTouchEvent(event);
-            }
+    public class CustomActivity extends Activity{
+        @Override
+        protected void onResume() {
+            super.onResume();
+            //注：回调 1
+            Bugtags.onResume(this);
         }
-  ```
-    关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
-# 使用截屏:
+        @Override
+        protected void onPause() {
+            super.onPause();
+              //注：回调 2
+            Bugtags.onPause(this);
+        }
+
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event) {
+              //注：回调 3
+            Bugtags.onDispatchTouchEvent(this, event);
+            return super.dispatchTouchEvent(event);
+        }
+    }
+```
+
+## 第三步：
+* 继承Application，在onCreate() 方法中初始化Bugtags：
+```java
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //在这里初始化
+        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
+    }
+}
+```
+* 修改AndroidManifest.xml，使用MyApplication类,例如：
+```xml
+<application
+    android:name=".MyApplication"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme" >
+    ....
+</application>
+```
+
+关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
+
+# 使用截屏
 ![如何使用](screenshot/usage.gif)
 
-# 高级选项:
+# 高级选项
 1. 呼出方式Invoke event:
   * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
   * BTGInvocationEventShake: 通过摇一摇呼出Bugtags。
@@ -85,6 +120,23 @@ Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
   * Bugtags.sendException(Throwable ex);
 3. 发送文字反馈信息:
   * Bugtags.sendFeedback(String msg);
+
+# Change log
+
+2015.09.03    1.0.4    性能优化
+
+2015.08.26    1.0.3    传输反馈、精简依赖、改善集成方式
+
+2015.08.20    1.0.2    性能优化
+
+2015.08.15    1.0.1    小问题修改
+
+2015.08.07    1.0.0    正式版发布
+
+2015.08.01    0.9.0    Pre-release发布
+
+# License
+This demo is [BSD-licensed](LICENSE).
 
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
 [Bugtags]:http://bugtags.com
