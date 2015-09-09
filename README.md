@@ -14,7 +14,7 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 
 > If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK.
 
-> Notice: You need a invitation code to join our system, just send me a email via <a href="mailto:he.changbin@bugtags.com">my work mail</a>.
+> We are open for registration now!
 
 > Bugtags also support [iOS](https://github.com/bugtags/Bugtags-iOS) !
 
