@@ -136,7 +136,7 @@ public class MyApplication extends Application {
 
 * 在module的build.gradle更改dependency
   ```gradle
-      compile 'com.bugtags.library:bugtags-lib:latest.integration'
+      compile 'com.bugtags.library:bugtags-lib-canary:latest.integration'
   ```
 
 # Change log

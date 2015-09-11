@@ -148,7 +148,7 @@ maven {
 ```
 * Change your dependency in your module's build.gradle
 ```gradle
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.bugtags.library:bugtags-lib-canary:latest.integration'
 ```
 
 # Change log
