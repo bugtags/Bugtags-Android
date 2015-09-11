@@ -27,6 +27,9 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 3. Automatically capture crashes.
 4. Bug lifecycle management.
 
+# Usage
+![How to use](screenshot/usage.gif)
+
 # Install using gradle
 
 ## Step 1:
@@ -122,9 +125,6 @@ public class MyApplication extends Application {
 
 ## There you go!
 
-# Usage
-![How to use](screenshot/usage.gif)
-
 # Explore
 1. Invoke event:
   * BTGInvocationEventBubble: Show floating circle in app.
@@ -134,6 +134,22 @@ public class MyApplication extends Application {
   * Bugtags.sendException(Throwable ex);
 3. Send feedback:
   * Bugtags.sendFeedback(String msg);
+
+# Canary Channel
+We are offering a bleeding edge builds on canary chanel, you can enjoy the new features in the first place!
+
+> Canry: https://en.wikipedia.org/wiki/Canary
+
+* Add repository in your project's build.gradle
+```gradle
+maven {
+    url 'https://dl.bintray.com/bugtags/maven'
+}
+```
+* Change your dependency in your module's build.gradle
+```gradle
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+```
 
 # Change log
 

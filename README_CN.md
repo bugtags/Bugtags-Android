@@ -17,6 +17,9 @@ Bugtags Android SDK
 3. 自动捕捉闪退bug
 4. bug生命周期管理
 
+# 使用截屏
+![如何使用](screenshot/usage.gif)
+
 # 使用gradle安装集成
 
 ## 第一步：
@@ -108,9 +111,6 @@ public class MyApplication extends Application {
 
 关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
 
-# 使用截屏
-![如何使用](screenshot/usage.gif)
-
 # 高级选项
 1. 呼出方式Invoke event:
   * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
@@ -120,6 +120,24 @@ public class MyApplication extends Application {
   * Bugtags.sendException(Throwable ex);
 3. 发送文字反馈信息:
   * Bugtags.sendFeedback(String msg);
+
+# Canary 发布渠道
+我们在canary渠道发布具有最新特性的版本，欢迎喜欢尝新的用户使用这个版本！
+> Canary: 金丝雀，早期旷工探洞，使用金丝雀来侦查环境，寓意勇敢尝试新特性。
+
+> From youdao dic: http://dict.youdao.com/search?q=canary&keyfrom=dict.index
+
+* 在project的build.gradle添加repository
+  ```gradle
+  maven {
+      url 'https://dl.bintray.com/bugtags/maven'
+  }
+  ```
+
+* 在module的build.gradle更改dependency
+  ```gradle
+      compile 'com.bugtags.library:bugtags-lib:latest.integration'
+  ```
 
 # Change log
 
