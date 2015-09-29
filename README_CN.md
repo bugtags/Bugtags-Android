@@ -47,9 +47,9 @@ dependencies {
 }
 ```
 
-> 最新版本是: **1.0.4**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.0.5**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.4'
+> compile 'com.bugtags.library:bugtags-lib:1.0.5'
 
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
@@ -140,6 +140,8 @@ public class MyApplication extends Application {
   ```
 
 # Change log
+
+2015.09.29    1.0.5    崩溃截图、更多启动选项、bug修复、性能优化
 
 2015.09.03    1.0.4    性能优化
 
