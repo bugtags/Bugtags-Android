@@ -16,4 +16,6 @@
 #   public *;
 #}
 
+-dontwarn org.apache.http.**
+-dontwarn android.net.http.AndroidHttpClient
 -keep class com.bugtags.library.** {*;}
