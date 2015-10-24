@@ -16,6 +16,9 @@
 #   public *;
 #}
 
+-keepattributes LineNumberTable,SourceFile
+
 -dontwarn org.apache.http.**
 -dontwarn android.net.http.AndroidHttpClient
 -keep class com.bugtags.library.** {*;}
+-dontwarn com.bugtags.library.vender.**

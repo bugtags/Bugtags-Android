@@ -58,9 +58,9 @@ dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
-> The latest version is: **1.0.5**, you can also add dependency with specific version:
+> The latest version is: **1.0.6**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.5'
+> compile 'com.bugtags.library:bugtags-lib:1.0.6'
 
 
 ## Step 2:
@@ -148,10 +148,20 @@ maven {
 ```
 * Change your dependency in your module's build.gradle
 ```gradle
-    compile 'com.bugtags.library:bugtags-lib-canary:latest.integration'
+    compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'
 ```
 
 # Change log
+2015.10.24    1.0.6     
+- support tartgetSdkVersion=23(Android M, 6.0)
+- long-press on "+" button to restart logging
+- support anonymous report options
+- improve crash collecting policy, disable when debugger connected
+- add CPU architecture for device information
+- fix console log policy
+- support uses-permission customization
+- start options for crashWichScrenshot
+
 2015.09.29    1.0.5    crash with photo, start options, bug fix, performance improving
 
 2015.09.03    1.0.4    performance improving

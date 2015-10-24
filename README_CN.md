@@ -47,9 +47,9 @@ dependencies {
 }
 ```
 
-> 最新版本是: **1.0.5**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.0.6**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.5'
+> compile 'com.bugtags.library:bugtags-lib:1.0.6'
 
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
@@ -136,10 +136,19 @@ public class MyApplication extends Application {
 
 * 在module的build.gradle更改dependency
   ```gradle
-      compile 'com.bugtags.library:bugtags-lib-canary:latest.integration'
+      compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'
   ```
 
 # Change log
+2015.10.24    1.0.6     
+- 支持targetSdkVersion 23(Android M, 6.0)；
+- 新增长按截图按钮重新开始记录数据;
+- 支持后台高级设置的匿名提交选项；
+- 优化闪退捕捉逻辑，Debugger Connected状态下默认不上报闪退；
+- 设备信息增加CPU构架信息；
+- 修正console log获取逻辑；
+- 权限可裁剪，裁剪方法见帮助文档；
+- 启动选项可选crash截屏。
 
 2015.09.29    1.0.5    崩溃截图、更多启动选项、bug修复、性能优化
 
