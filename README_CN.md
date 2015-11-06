@@ -47,9 +47,9 @@ dependencies {
 }
 ```
 
-> 最新版本是: **1.0.6**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.0.7**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.6'
+> compile 'com.bugtags.library:bugtags-lib:1.0.7'
 
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
@@ -140,6 +140,10 @@ public class MyApplication extends Application {
   ```
 
 # Change log
+2015.11.06    1.0.7
+- 自定义version name 与 version code
+- bug fix
+
 2015.10.24    1.0.6     
 - 支持targetSdkVersion 23(Android M, 6.0)；
 - 新增长按截图按钮重新开始记录数据;

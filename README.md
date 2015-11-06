@@ -58,9 +58,9 @@ dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
-> The latest version is: **1.0.6**, you can also add dependency with specific version:
+> The latest version is: **1.0.7**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.6'
+> compile 'com.bugtags.library:bugtags-lib:1.0.7'
 
 
 ## Step 2:
@@ -152,7 +152,11 @@ maven {
 ```
 
 # Change log
-2015.10.24    1.0.6     
+2015.11.06    1.0.7
+- add api for custom version name & version code
+- bug fix
+
+2015.10.24    1.0.6
 - support tartgetSdkVersion=23(Android M, 6.0)
 - long-press on "+" button to restart logging
 - support anonymous report options
