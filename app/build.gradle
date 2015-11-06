@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.0.6"
-def VERSION_CODE = 7
+def VERSION_NAME = "1.0.7"
+def VERSION_CODE = 8
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -25,7 +25,7 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

@@ -1,12 +1,14 @@
 package com.bugtags.demo;
 
+import android.app.Application;
+
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 
 /**
  * Created by bugtags.com on 15/7/24.
  */
-public class MyApplication extends android.app.Application {
+public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
