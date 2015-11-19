@@ -58,9 +58,9 @@ dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
-> The latest version is: **1.0.7**, you can also add dependency with specific version:
+> The latest version is: **1.0.8**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.7'
+> compile 'com.bugtags.library:bugtags-lib:1.0.8'
 
 
 ## Step 2:
@@ -152,6 +152,10 @@ maven {
 ```
 
 # Change log
+2015.11.19    1.0.8
+- screenshot with toast and dialog
+- performance improving
+
 2015.11.06    1.0.7
 - add api for custom version name & version code
 - bug fix

@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.0.7"
-def VERSION_CODE = 8
+def VERSION_NAME = "1.0.8"
+def VERSION_CODE = 9
 
 android {
     useLibrary 'org.apache.http.legacy'

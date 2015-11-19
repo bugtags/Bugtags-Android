@@ -47,9 +47,9 @@ dependencies {
 }
 ```
 
-> 最新版本是: **1.0.7**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.0.8**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.7'
+> compile 'com.bugtags.library:bugtags-lib:1.0.8'
 
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
@@ -140,6 +140,10 @@ public class MyApplication extends Application {
   ```
 
 # Change log
+2015.11.19    1.0.8
+- 截图改进：包括 Toast 和 Dialog
+- 性能优化
+
 2015.11.06    1.0.7
 - 自定义version name 与 version code
 - bug fix
