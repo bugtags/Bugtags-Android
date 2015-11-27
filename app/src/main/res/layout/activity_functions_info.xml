@@ -12,9 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/functions_intro"
+        android:textColor="@android:color/black"
         android:textSize="@dimen/global_font_large"/>
 
     <TextView
+        android:textSize="@dimen/global_font_large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

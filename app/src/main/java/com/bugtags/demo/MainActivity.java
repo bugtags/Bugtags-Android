@@ -1,12 +1,12 @@
 package com.bugtags.demo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.bugtags.wrapper.BugtagsAppCompatActivity;
 
-public class MainActivity extends BugtagsAppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

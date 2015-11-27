@@ -11,10 +11,11 @@
               tools:context=".FeedbackActivity">
 
     <EditText
+        android:textColor="@android:color/black"
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="@dimen/feedback_text_width"
-        android:background="@drawable/btg_bg_input"
+        android:background="@drawable/btg_demo_bg_input"
         android:gravity="top"
         android:hint="@string/feedback_hint"
         android:padding="@dimen/global_margin_standard"

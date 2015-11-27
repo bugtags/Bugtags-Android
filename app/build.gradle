@@ -1,24 +1,37 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.0.1"
+def VERSION_NAME = "1.0.8"
+def VERSION_CODE = 9
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.bugtags.demo"
         minSdkVersion 9
-        targetSdkVersion 22
-        versionCode 2
+        targetSdkVersion 19
+        versionCode VERSION_CODE
         versionName VERSION_NAME
     }
 
-    buildTypes {
+    signingConfigs {
         release {
+            storeFile file("btg.jks")
+            storePassword "bugtags"
+            keyAlias "bugtags"
+            keyPassword "bugtags"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -27,5 +40,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library:bugtags-lib:' + VERSION_NAME
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
