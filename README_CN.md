@@ -47,9 +47,9 @@ dependencies {
 }
 ```
 
-> 最新版本是: **1.0.8**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.0.9**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.8'
+> compile 'com.bugtags.library:bugtags-lib:1.0.9'
 
 ## 第二步：
 * 在你的Activity基类中添加3个回调：
@@ -140,6 +140,11 @@ public class MyApplication extends Application {
   ```
 
 # Change log
+2015.12.05    1.0.9
+- 修复用户步骤时间记录的 bug，修改显示样式使得更易读
+- 修复某些安卓 ROM 的 sdcard 路径不规范可能引起的 bug
+- 修改对于 activity 的引用为软引用，防止可能存在的内存泄漏
+
 2015.11.19    1.0.8
 - 截图改进：包括 Toast 和 Dialog
 - 性能优化

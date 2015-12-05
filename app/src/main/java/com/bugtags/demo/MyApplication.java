@@ -21,6 +21,8 @@ public class MyApplication extends Application {
                 trackingConsoleLog(true).//是否收集console log
                 trackingUserSteps(true).//是否收集用户操作步骤
                 crashWithScreenshot(true).//crash附带图
+//                versionName("1.0.1").//自定义版本名称
+//                versionCode(10).//自定义版本号
                 build();
         Bugtags.start("d3ad445a39bf60628f7acd4bd08eff4f", this, Bugtags.BTGInvocationEventBubble, options);
     }

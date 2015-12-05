@@ -58,9 +58,9 @@ dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
-> The latest version is: **1.0.8**, you can also add dependency with specific version:
+> The latest version is: **1.0.9**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.8'
+> compile 'com.bugtags.library:bugtags-lib:1.0.9'
 
 
 ## Step 2:
@@ -152,6 +152,11 @@ maven {
 ```
 
 # Change log
+2015.12.05    1.0.9
+- bugfix for user step timestamp, better layout
+- bugfix for some customized android ROM's missing sdcard
+- change reference to weak reference, prevent potential memory leak
+
 2015.11.19    1.0.8
 - screenshot with toast and dialog
 - performance improving
