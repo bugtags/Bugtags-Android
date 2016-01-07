@@ -3,8 +3,8 @@
 Bugtags Android SDK
 ===================
 [ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
-###中文文档请移步[README_CN](README_CN.md)
-###QQ tribe for help: 479166560
+###中文文档请移步 [README_CN](README_CN.md)
+###QQ tribe for help: 210286347
 
 [Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically. Improve your apps anywhere, anytime.
 
@@ -35,37 +35,52 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 ## Step 1:
 * Setup repositories in Top-level build.gradle file:
 
-```gradle
+```
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.3.0'
+        
+        //**important**
+        classpath 'com.bugtags.library:bugtags-gradle:1.1.0'
     }
 }
 allprojects {
     repositories {
-        jcenter() //repository 1
-        mavenCentral()  //repository 2
+        jcenter() //注：repository 1
+        mavenCentral()  //注：repository 2
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"
+        }
     }
 }
 ```
-* Add dependency in your module's build.gradle file：
 
-```gradle
+* Add plugin and dependency in your module's build.gradle file：
+
+```
+apply plugin: 'com.bugtags.library.plugin'
+
 dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
-> The latest version is: **1.0.9**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.9'
+> The latest version is: **1.1.0**, you can also add dependency with specific version:
+
+> compile 'com.bugtags.library:bugtags-lib:1.1.0'
 
 
 ## Step 2:
 * Add three callbacks in your base Activity class:
-```java
+
+```
       package your.package.name;
 
       import android.app.Activity;
@@ -100,7 +115,8 @@ dependencies {
 
 ## Step 3:
 * Create subclass of Application，initialize Bugtags in onCreate() method:
-```java
+
+```
 public class MyApplication extends Application {
 
     @Override
@@ -111,8 +127,10 @@ public class MyApplication extends Application {
     }
 }
 ```
+
 * Modify AndroidManifest.xml，use MyApplication:
-```xml
+
+```
 <application
     android:name=".MyApplication"
     android:label="@string/app_name"
@@ -141,17 +159,50 @@ We are offering a bleeding edge builds on canary chanel, you can enjoy the new f
 > Canry: https://en.wikipedia.org/wiki/Canary
 
 * Add repository in your project's build.gradle
-```gradle
-maven {
-    url 'https://dl.bintray.com/bugtags/maven'
-}
+
 ```
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"//added
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.0'
+        classpath 'com.bugtags.library-canary:bugtags-gradle:1.1.0'//modify
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"//added
+        }
+    }
+}
+  ```
+
 * Change your dependency in your module's build.gradle
-```gradle
-    compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'
+
+```
+apply plugin: 'com.bugtags.library.plugin'
+
+dependencies {
+      compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'//modify
+}
 ```
 
 # Change log
+2016.01.06    1.1.0
+- support cocos2d-x game screenshot(need to build package by gradle)
+- add callback before and after sending issue  
+- add manually invoke screenshot
+- fix competing thread bug on resending issue
+- other bug fix
+
 2015.12.05    1.0.9
 - bugfix for user step timestamp, better layout
 - bugfix for some customized android ROM's missing sdcard

@@ -1,20 +1,20 @@
 Bugtags Android SDK
 ===================
 [ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
-###帮助QQ群: 479166560
+###帮助QQ群: 210286347
 
-[Bugtags]，为移动测试而生，随时随地改善你的移动应用。只需一步，提交bug及其上下文数据，自动捕捉崩溃，让修复bug更简单。
+[Bugtags]，为移动测试而生，随时随地改善你的移动应用。只需一步，提交 bug 及其上下文数据，自动捕捉崩溃，让修复 bug 更简单。
 
 [免费注册](http://bugtags.com/)，邀请你的团队成员来一起来改善你的app。
 
-下载demo app: [DEMO.apk](screenshot/demo.apk)
+下载 demo app: [DEMO.apk](screenshot/demo.apk)
 
-> 如果你使用Eclipse来开发Android App, 访问: [SDK for Eclipse]下载SDK.
+> 如果你使用 Eclipse 来开发 Android App, 访问: [SDK for Eclipse]下载 SDK.
 
 # 功能
-1. 一键截屏，使用标签进行bug描述.
-2. 自动获取设备与app环境参数
-3. 自动捕捉闪退bug
+1. 一键截屏，使用标签进行 bug 描述.
+2. 自动获取设备与 app 环境参数
+3. 自动捕捉闪退 bug
 4. bug生命周期管理
 
 # 使用截屏
@@ -23,37 +23,55 @@ Bugtags Android SDK
 # 使用gradle安装集成
 
 ## 第一步：
-* 在项目的build.gradle（项目最外层的build.gradle文件，所谓的Top-level build file）设置repositories：
-```gradle
+* 在项目的 build.gradle（项目最外层的 build.gradle 文件，所谓的 Top-level build file）设置 repositories：
+
+```
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.3.0'
+        
+        //**重要**
+        classpath 'com.bugtags.library:bugtags-gradle:1.1.0'
     }
 }
 allprojects {
     repositories {
         jcenter() //注：repository 1
         mavenCentral()  //注：repository 2
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"
+        }
     }
 }
 ```
-* 在模块的build.gradle添加依赖：
-```gradle
+
+* 在模块的 build.gradle **应用插件**和**添加依赖**：
+
+```
+//应用插件
+apply plugin: 'com.bugtags.library.plugin'
+
 dependencies {
+    //添加依赖
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
 
-> 最新版本是: **1.0.9**，你也可以在添加依赖时使用明确的版本，
+> 最新版本是: **1.1.0**，你也可以在添加依赖时使用明确的版本，
 
-> compile 'com.bugtags.library:bugtags-lib:1.0.9'
+> compile 'com.bugtags.library:bugtags-lib:1.1.0'
 
 ## 第二步：
-* 在你的Activity基类中添加3个回调：
-```java
+* 在你的 Activity 基类中添加3个回调：
+
+```
     package your.package.name;
 
     import android.app.Activity;
@@ -87,8 +105,10 @@ dependencies {
 ```
 
 ## 第三步：
-* 继承Application，在onCreate() 方法中初始化Bugtags：
-```java
+
+* 继承 Application，在 onCreate() 方法中初始化 Bugtags：
+
+```
 public class MyApplication extends Application {
 
     @Override
@@ -99,8 +119,10 @@ public class MyApplication extends Application {
     }
 }
 ```
-* 修改AndroidManifest.xml，使用MyApplication类,例如：
-```xml
+
+* 修改 AndroidManifest.xml，使用 MyApplication 类,例如：
+
+```
 <application
     android:name=".MyApplication"
     android:label="@string/app_name"
@@ -109,14 +131,14 @@ public class MyApplication extends Application {
 </application>
 ```
 
-关于如何使用Android Studio以及gradle，请参考：[Android Developer Site].
+关于如何使用 Android Studio 以及 gradle，请参考：[Android Developer Site].
 
 # 高级选项
-1. 呼出方式Invoke event:
+1. 呼出方式 Invoke event:
   * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
   * BTGInvocationEventShake: 通过摇一摇呼出Bugtags。
   * BTGInvocationEventNone: 不显示悬浮小球，只收集崩溃信息（如果允许）。
-2. 手动发送Exception:
+2. 手动发送 Exception:
   * Bugtags.sendException(Throwable ex);
 3. 发送文字反馈信息:
   * Bugtags.sendFeedback(String msg);
@@ -128,18 +150,50 @@ public class MyApplication extends Application {
 > From youdao dic: http://dict.youdao.com/search?q=canary&keyfrom=dict.index
 
 * 在project的build.gradle添加repository
-  ```gradle
-  maven {
-      url 'https://dl.bintray.com/bugtags/maven'
-  }
-  ```
 
-* 在module的build.gradle更改dependency
-  ```gradle
-      compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'
-  ```
+```
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"//新增
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.0'
+        classpath 'com.bugtags.library-canary:bugtags-gradle:1.1.0'//修改
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven{
+            url "https://dl.bintray.com/bugtags/maven"//新增
+        }
+    }
+}
+```
+
+* 在 module 的 build.gradle 更改 dependency
+
+```
+apply plugin: 'com.bugtags.library.plugin'
+
+dependencies {
+      compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'//修改
+}
+```
 
 # Change log
+2016.01.06    1.1.0
+- 增加对 cocos2d-x 游戏的截屏支持(仅支持以 gradle 打包)
+- 新增设置问题提交之前和之后的回调 API
+- 新增手动调用截屏界面的 API
+- 修复问题重传时可能产生的多线程竞争问题
+- 其他 bug 修复
+
 2015.12.05    1.0.9
 - 修复用户步骤时间记录的 bug，修改显示样式使得更易读
 - 修复某些安卓 ROM 的 sdcard 路径不规范可能引起的 bug
