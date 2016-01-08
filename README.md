@@ -14,10 +14,7 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 
 > If you are using Eclipse for Android development, visit [SDK for Eclipse] to download SDK.
 
-> We are open for registration now!
-
 > Bugtags also support [iOS](https://github.com/bugtags/Bugtags-iOS) !
-
 
 > We are going to support English language in September.
 
@@ -33,7 +30,7 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 # Install using gradle
 
 ## Step 1:
-* Setup repositories in Top-level build.gradle file:
+* Setup `buildscript dependencies`  in Top-level build.gradle file:
 
 ```
 buildscript {
@@ -42,10 +39,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
-        
-        //**important**
-        classpath 'com.bugtags.library:bugtags-gradle:1.1.0'
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        //**重要**
+        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
 }
 allprojects {
@@ -56,7 +52,7 @@ allprojects {
 }
 ```
 
-* Add plugin and dependency in your module's build.gradle file：
+* Add `plugin and dependency` in your module's build.gradle file：
 
 ```
 apply plugin: 'com.bugtags.library.plugin'
@@ -165,7 +161,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
-        classpath 'com.bugtags.library-canary:bugtags-gradle:1.1.0'//modify
+        classpath 'com.bugtags.library-canary:bugtags-gradle:latest.integration'//modify
     }
 }
 allprojects {
@@ -191,6 +187,7 @@ dependencies {
 
 # Change log
 2016.01.06    1.1.0
+
 - support cocos2d-x game screenshot(need to build package by gradle)
 - add callback before and after sending issue  
 - add manually invoke screenshot
@@ -198,19 +195,23 @@ dependencies {
 - other bug fix
 
 2015.12.05    1.0.9
+
 - bugfix for user step timestamp, better layout
 - bugfix for some customized android ROM's missing sdcard
 - change reference to weak reference, prevent potential memory leak
 
 2015.11.19    1.0.8
+
 - screenshot with toast and dialog
 - performance improving
 
 2015.11.06    1.0.7
+
 - add api for custom version name & version code
 - bug fix
 
 2015.10.24    1.0.6
+
 - support tartgetSdkVersion=23(Android M, 6.0)
 - long-press on "+" button to restart logging
 - support anonymous report options
@@ -220,19 +221,33 @@ dependencies {
 - support uses-permission customization
 - start options for crashWichScrenshot
 
-2015.09.29    1.0.5    crash with photo, start options, bug fix, performance improving
+2015.09.29    1.0.5    
 
-2015.09.03    1.0.4    performance improving
+- crash with photo, start options, bug fix, performance improving
 
-2015.08.26    1.0.3    send progress, simplify dependency, improve integration
+2015.09.03    1.0.4    
 
-2015.08.20    1.0.2    performance improving
+- performance improving
 
-2015.08.15    1.0.1    bug fix
+2015.08.26    1.0.3    
 
-2015.08.07    1.0.0    official release
+- send progress, simplify dependency, improve integration
 
-2015.08.01    0.9.0    pre-release
+2015.08.20    1.0.2    
+
+- performance improving
+
+2015.08.15    1.0.1    
+
+- bug fix
+
+2015.08.07    1.0.0    
+
+- official release
+
+2015.08.01    0.9.0    
+
+- pre-release
 
 # License
 This demo is [BSD-licensed](LICENSE).

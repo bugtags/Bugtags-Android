@@ -22,8 +22,9 @@ Bugtags Android SDK
 
 # 使用gradle安装集成
 
-## 第一步：
-* 在项目的 build.gradle（项目最外层的 build.gradle 文件，所谓的 Top-level build file）设置 repositories：
+### 第一步：配置依赖
+
+* Bugtags SDK 已经同步到 jcenter 和 MavenCentral，请在项目的 build.gradle（项目最外层的 build.gradle 文件，所谓的 Top-level build file）设置 `buildscript dependencies` ：
 
 ```
 buildscript {
@@ -32,10 +33,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
-        
+        classpath 'com.android.tools.build:gradle:1.2.3'
         //**重要**
-        classpath 'com.bugtags.library:bugtags-gradle:1.1.0'
+        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
 }
 allprojects {
@@ -46,75 +46,69 @@ allprojects {
 }
 ```
 
-* 在模块的 build.gradle **应用插件**和**添加依赖**：
+* 在模块的 build.gradle `应用插件和添加依赖`：
 
 ```
 //应用插件
 apply plugin: 'com.bugtags.library.plugin'
 
 dependencies {
-    //添加依赖
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
 ```
 
-> 最新版本是: **1.1.0**，你也可以在添加依赖时使用明确的版本，
+### 第二步：添加回调
 
-> compile 'com.bugtags.library:bugtags-lib:1.1.0'
-
-## 第二步：
-* 在你的 Activity 基类中添加3个回调：
+在你的 `Activity 基类`（或所有的 Activity）中添加3个回调：
 
 ```
-    package your.package.name;
+package your.package.name;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import com.bugtags.library.Bugtags;
 
-    import android.app.Activity;
-    import android.os.Bundle;
-    import android.view.MotionEvent;
-
-    import com.bugtags.library.Bugtags;
-
-    public class CustomActivity extends Activity{
-        @Override
-        protected void onResume() {
-            super.onResume();
-            //注：回调 1
-            Bugtags.onResume(this);
-        }
-
-        @Override
-        protected void onPause() {
-            super.onPause();
-              //注：回调 2
-            Bugtags.onPause(this);
-        }
-
-        @Override
-        public boolean dispatchTouchEvent(MotionEvent event) {
-              //注：回调 3
-            Bugtags.onDispatchTouchEvent(this, event);
-            return super.dispatchTouchEvent(event);
-        }
+public class BaseActivity extends Activity{
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //注：回调 1
+        Bugtags.onResume(this);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //注：回调 2
+        Bugtags.onPause(this);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        //注：回调 3
+        Bugtags.onDispatchTouchEvent(this, event);
+        return super.dispatchTouchEvent(event);
+    }
+}
+
 ```
 
-## 第三步：
+### 第三步：启动 SDK
 
-* 继承 Application，在 onCreate() 方法中初始化 Bugtags：
+* `继承 Application`，在 onCreate() 方法中初始化 Bugtags：
 
 ```
 public class MyApplication extends Application {
-
     @Override
     public void onCreate() {
         super.onCreate();
         //在这里初始化
-        Bugtags.start("YOUR APPKEY", this, Bugtags.BTGInvocationEventBubble);
+        Bugtags.start("APP_KEY", this, Bugtags.BTGInvocationEventBubble);
     }
 }
 ```
 
-* 修改 AndroidManifest.xml，使用 MyApplication 类,例如：
+* 修改 `AndroidManifest.xml`，使用 `MyApplication` 类,例如：
 
 ```
 <application
@@ -125,7 +119,9 @@ public class MyApplication extends Application {
 </application>
 ```
 
-关于如何使用 Android Studio 以及 gradle，请参考：[Android Developer Site].
+关于如何使用 Android Studio 以及 gradle，请参考 bugtags 博客[系列文章](http://blog.bugtags.com/tags/EmbraceAndroidStudio/)。
+
+##### 编译运行 App，将会在 App 内部看到一个小球，成功了!
 
 # 高级选项
 1. 呼出方式 Invoke event:
@@ -156,7 +152,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
-        classpath 'com.bugtags.library-canary:bugtags-gradle:1.1.0'//修改
+        classpath 'com.bugtags.library-canary:bugtags-gradle:latest.integration'//修改
     }
 }
 allprojects {
@@ -182,6 +178,7 @@ dependencies {
 
 # Change log
 2016.01.06    1.1.0
+
 - 增加对 cocos2d-x 游戏的截屏支持(仅支持以 gradle 打包)
 - 新增设置问题提交之前和之后的回调 API
 - 新增手动调用截屏界面的 API
@@ -189,19 +186,23 @@ dependencies {
 - 其他 bug 修复
 
 2015.12.05    1.0.9
+
 - 修复用户步骤时间记录的 bug，修改显示样式使得更易读
 - 修复某些安卓 ROM 的 sdcard 路径不规范可能引起的 bug
 - 修改对于 activity 的引用为软引用，防止可能存在的内存泄漏
 
 2015.11.19    1.0.8
+
 - 截图改进：包括 Toast 和 Dialog
 - 性能优化
 
 2015.11.06    1.0.7
+
 - 自定义version name 与 version code
 - bug fix
 
 2015.10.24    1.0.6     
+
 - 支持targetSdkVersion 23(Android M, 6.0)；
 - 新增长按截图按钮重新开始记录数据;
 - 支持后台高级设置的匿名提交选项；
@@ -211,19 +212,33 @@ dependencies {
 - 权限可裁剪，裁剪方法见帮助文档；
 - 启动选项可选crash截屏。
 
-2015.09.29    1.0.5    崩溃截图、更多启动选项、bug修复、性能优化
+2015.09.29    1.0.5    
 
-2015.09.03    1.0.4    性能优化
+- 崩溃截图、更多启动选项、bug修复、性能优化
 
-2015.08.26    1.0.3    传输反馈、精简依赖、改善集成方式
+2015.09.03    1.0.4    
 
-2015.08.20    1.0.2    性能优化
+- 性能优化
 
-2015.08.15    1.0.1    小问题修改
+2015.08.26    1.0.3    
 
-2015.08.07    1.0.0    正式版发布
+- 传输反馈、精简依赖、改善集成方式
 
-2015.08.01    0.9.0    Pre-release发布
+2015.08.20    1.0.2    
+
+- 性能优化
+
+2015.08.15    1.0.1    
+
+- 小问题修改
+
+2015.08.07    1.0.0    
+
+- 正式版发布
+
+2015.08.01    0.9.0    
+
+- Pre-release发布
 
 # License
 This demo is [BSD-licensed](LICENSE).
