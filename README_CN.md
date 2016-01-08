@@ -30,9 +30,6 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-        maven{
-            url "https://dl.bintray.com/bugtags/maven"
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
@@ -45,9 +42,6 @@ allprojects {
     repositories {
         jcenter() //注：repository 1
         mavenCentral()  //注：repository 2
-        maven{
-            url "https://dl.bintray.com/bugtags/maven"
-        }
     }
 }
 ```
