@@ -38,7 +38,7 @@ android {
     }
 }
 
-//apply plugin: 'com.bugtags.library.plugin'
+apply plugin: 'com.bugtags.library.plugin'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
