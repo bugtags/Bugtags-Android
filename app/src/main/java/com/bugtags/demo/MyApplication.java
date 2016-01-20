@@ -21,8 +21,6 @@ public class MyApplication extends Application {
                 trackingCrashLog(true).//是否收集crash
                 trackingConsoleLog(true).//是否收集console log
                 trackingUserSteps(true).//是否收集用户操作步骤
-                versionName("1.0.1").//自定义版本名称
-                versionCode(10).//自定义版本号
                 build();
         Bugtags.start("d3ad445a39bf60628f7acd4bd08eff4f", this, Bugtags.BTGInvocationEventBubble, options);
 
@@ -30,6 +28,7 @@ public class MyApplication extends Application {
         Bugtags.setBeforeSendingCallback(new BugtagsCallback() {
             @Override
             public void run() {
+                Bugtags.log("before");
             }
         });
 

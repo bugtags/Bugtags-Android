@@ -57,6 +57,12 @@ allprojects {
 ```
 apply plugin: 'com.bugtags.library.plugin'
 
+//mapping upload
+bugtags {
+    appKey 'APP_KEY'  //your appKey
+    appSecret 'APP_SECRET'    //your appSecret，admin can access in setting page
+}
+
 dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
@@ -186,66 +192,70 @@ dependencies {
 ```
 
 # Change log
-2016.01.06    1.1.0
+### 2016.01.06 v1.1.0
 
-- support cocos2d-x game screenshot(need to build package by gradle)
-- add callback before and after sending issue  
-- add manually invoke screenshot
+- support `cocos2d-x game` screenshot(`need to build package by gradle`)
+- add `callback before and after sending issue`
+- add `manually invoke screenshot`
 - fix competing thread bug on resending issue
 - other bug fix
 
-2015.12.05    1.0.9
+### 2015.12.05 v1.0.9
 
 - bugfix for user step timestamp, better layout
 - bugfix for some customized android ROM's missing sdcard
-- change reference to weak reference, prevent potential memory leak
+- change reference to weak reference, `prevent potential memory leak`
 
-2015.11.19    1.0.8
+### 2015.11.19 v1.0.8
 
-- screenshot with toast and dialog
+- screenshot with `toast and dialog`
 - performance improving
 
-2015.11.06    1.0.7
+### 2015.11.06 v1.0.7
 
-- add api for custom version name & version code
+- add api for `custom version name & version code`
 - bug fix
 
-2015.10.24    1.0.6
+### 2015.10.24 v1.0.6
 
-- support tartgetSdkVersion=23(Android M, 6.0)
-- long-press on "+" button to restart logging
+- support `tartgetSdkVersion=23(Android M, 6.0)`
+- long-press on "+" button to `restart logging`
 - support anonymous report options
-- improve crash collecting policy, disable when debugger connected
+- improve crash collecting policy, `disable when debugger connected`
 - add CPU architecture for device information
 - fix console log policy
-- support uses-permission customization
-- start options for crashWichScrenshot
+- support `uses-permission customization`
+- start options for crashWithScrenshot
 
-2015.09.29    1.0.5    
+### 2015.09.29 v1.0.5
 
-- crash with photo, start options, bug fix, performance improving
+- `crash with photo`, start options,
+- bug fix
+- performance improving
 
-2015.09.03    1.0.4    
+### 2015.09.03 v1.0.4
 
 - performance improving
 
-2015.08.26    1.0.3    
+### 2015.08.26 v1.0.3
 
-- send progress, simplify dependency, improve integration
+- send progress
+- simplify dependency
+- improve integration
 
-2015.08.20    1.0.2    
+### 2015.08.20 v1.0.2
 
 - performance improving
 
-2015.08.15    1.0.1    
+### 2015.08.15 v1.0.1
 
 - bug fix
 
-2015.08.07    1.0.0    
+### 2015.08.07 v1.0.0
 
 - official release
 
-2015.08.01    0.9.0    
+### 2015.08.01 v0.9.0
 
 - pre-release
 

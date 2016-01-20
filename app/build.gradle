@@ -40,6 +40,11 @@ android {
 
 apply plugin: 'com.bugtags.library.plugin'
 
+bugtags {
+    appKey "d3ad445a39bf60628f7acd4bd08eff4f"
+    appSecret "e01dfb622b45cce0235fe2cc0b0b3798"
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.bugtags.library:bugtags-lib:latest.integration'

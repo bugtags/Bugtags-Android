@@ -52,6 +52,12 @@ allprojects {
 //应用插件
 apply plugin: 'com.bugtags.library.plugin'
 
+//自动上传插件
+bugtags {
+    appKey 'APP_KEY'  //这里是你的 appKey
+    appSecret 'APP_SECRET'    //这里是你的 appSecret，管理员在设置页可以查看
+}
+
 dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 }
@@ -177,68 +183,73 @@ dependencies {
 ```
 
 # Change log
-2016.01.06    1.1.0
+### 2016.01.06 v1.1.0
 
-- 增加对 cocos2d-x 游戏的截屏支持(仅支持以 gradle 打包)
-- 新增设置问题提交之前和之后的回调 API
-- 新增手动调用截屏界面的 API
+- 增加对 __`cocos2d-x 游戏`__的截屏支持(`仅支持以 gradle 打包`)
+- 新增设置问题`提交之前和之后的回调 API`
+- 新增`手动调用截屏界面` API
 - 修复问题重传时可能产生的多线程竞争问题
 - 其他 bug 修复
 
-2015.12.05    1.0.9
+### 2015.12.05 v1.0.9
 
 - 修复用户步骤时间记录的 bug，修改显示样式使得更易读
 - 修复某些安卓 ROM 的 sdcard 路径不规范可能引起的 bug
-- 修改对于 activity 的引用为软引用，防止可能存在的内存泄漏
+- 修改对于 activity 的引用为软引用，`防止可能存在的内存泄漏`
 
-2015.11.19    1.0.8
+### 2015.11.19 v1.0.8
 
-- 截图改进：包括 Toast 和 Dialog
+- 截图改进：包括 __`Toast 和 Dialog`__
 - 性能优化
 
-2015.11.06    1.0.7
+### 2015.11.06 v1.0.7
 
-- 自定义version name 与 version code
+- `自定义` version name 与 version code
 - bug fix
 
-2015.10.24    1.0.6     
+### 2015.10.24 v1.0.6
 
-- 支持targetSdkVersion 23(Android M, 6.0)；
+- 支持 __`targetSdkVersion 23(Android M, 6.0)`__；
 - 新增长按截图按钮重新开始记录数据;
 - 支持后台高级设置的匿名提交选项；
-- 优化闪退捕捉逻辑，Debugger Connected状态下默认不上报闪退；
-- 设备信息增加CPU构架信息；
-- 修正console log获取逻辑；
-- 权限可裁剪，裁剪方法见帮助文档；
-- 启动选项可选crash截屏。
+- 优化闪退捕捉逻辑，Debugger Connected状态下__`默认不上报闪退`__；
+- 设备信息增加 CPU 构架信息；
+- 修正 console log 获取逻辑；
+- __`权限可裁剪`__，裁剪方法见帮助文档；
+- 启动选项可选 crash 截屏。
 
-2015.09.29    1.0.5    
+### 2015.09.29 v1.0.5
 
-- 崩溃截图、更多启动选项、bug修复、性能优化
+- `崩溃截图`
+- 更多启动选项
+- bug 修复
+- 性能优化
 
-2015.09.03    1.0.4    
+### 2015.09.03 v1.0.4
 
 - 性能优化
 
-2015.08.26    1.0.3    
+### 2015.08.26 v1.0.3
 
-- 传输反馈、精简依赖、改善集成方式
+- 传输反馈
+- 精简依赖
+- 改善集成方式
 
-2015.08.20    1.0.2    
+### 2015.08.20 v1.0.2
 
 - 性能优化
 
-2015.08.15    1.0.1    
+### 2015.08.15 v1.0.1
 
 - 小问题修改
 
-2015.08.07    1.0.0    
+### 2015.08.07 v1.0.0
 
 - 正式版发布
 
-2015.08.01    0.9.0    
+### 2015.08.01 v0.9.0
 
-- Pre-release发布
+- Pre-release 发布
 
 # License
 This demo is [BSD-licensed](LICENSE).
