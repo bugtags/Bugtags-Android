@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.1.0"
-def VERSION_CODE = 11
+def VERSION_NAME = "1.1.1"
+def VERSION_CODE = 12
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -48,4 +48,5 @@ bugtags {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
+
 }

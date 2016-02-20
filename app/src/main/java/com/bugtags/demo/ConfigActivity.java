@@ -18,7 +18,7 @@ public class ConfigActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 CrashBean bean = new CrashBean();
-                bean.different();
+                bean.differentOne();
             }
         });
     }

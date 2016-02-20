@@ -8,7 +8,7 @@ public class CrashBean {
     public CrashBean() {
     }
 
-    public void different() {
+    public void differentOne() {
         throw new RuntimeException("this is a demo crash current time：" + System.currentTimeMillis());
     }
 }

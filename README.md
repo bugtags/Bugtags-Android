@@ -68,9 +68,9 @@ dependencies {
 }
 ```
 
-> The latest version is: **1.1.0**, you can also add dependency with specific version:
+> The latest version is: **1.1.1**, you can also add dependency with specific version:
 
-> compile 'com.bugtags.library:bugtags-lib:1.1.0'
+> compile 'com.bugtags.library:bugtags-lib:1.1.1'
 
 
 ## Step 2:
@@ -192,6 +192,13 @@ dependencies {
 ```
 
 # Change log
+### 2016.02.20 v1.1.1
+
+- Java 1.6 compatibility
+- remove phone permission
+- fix sslv3 protocol issue
+- other bug fix
+
 ### 2016.01.06 v1.1.0
 
 - support `cocos2d-x game` screenshot(`need to build package by gradle`)
