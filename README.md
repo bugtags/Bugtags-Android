@@ -32,7 +32,7 @@ Download demo app here: [DEMO.apk](screenshot/demo.apk)
 ## Step 1:
 * Setup `buildscript dependencies`  in Top-level build.gradle file:
 
-```
+```groovy
 buildscript {
     repositories {
         jcenter()
@@ -54,7 +54,7 @@ allprojects {
 
 * Add `plugin and dependency` in your module's build.gradle file：
 
-```
+```groovy
 apply plugin: 'com.bugtags.library.plugin'
 
 //mapping upload
@@ -76,43 +76,43 @@ dependencies {
 ## Step 2:
 * Add three callbacks in your base Activity class:
 
-```
-      package your.package.name;
+```java
+package your.package.name;
 
-      import android.app.Activity;
-      import android.os.Bundle;
-      import android.view.MotionEvent;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MotionEvent;
 
-      import com.bugtags.library.Bugtags;
+import com.bugtags.library.Bugtags;
 
-      public class CustomActivity extends Activity{
-          @Override
-          protected void onResume() {
-              super.onResume();
-              //callback 1
-              Bugtags.onResume(this);
-          }
+public class CustomActivity extends Activity {
+  @Override
+  protected void onResume() {
+      super.onResume();
+      //callback 1
+      Bugtags.onResume(this);
+  }
 
-          @Override
-          protected void onPause() {
-              super.onPause();
-              //callback 2
-              Bugtags.onPause(this);
-          }
+  @Override
+  protected void onPause() {
+      super.onPause();
+      //callback 2
+      Bugtags.onPause(this);
+  }
 
-          @Override
-          public boolean dispatchTouchEvent(MotionEvent event) {
-              //callback 3
-              Bugtags.onDispatchTouchEvent(this, event);
-              return super.dispatchTouchEvent(event);
-          }
-      }
+  @Override
+  public boolean dispatchTouchEvent(MotionEvent event) {
+      //callback 3
+      Bugtags.onDispatchTouchEvent(this, event);
+      return super.dispatchTouchEvent(event);
+  }
+}
 ```
 
 ## Step 3:
 * Create subclass of Application，initialize Bugtags in onCreate() method:
 
-```
+```java
 public class MyApplication extends Application {
 
     @Override
@@ -126,7 +126,7 @@ public class MyApplication extends Application {
 
 * Modify AndroidManifest.xml，use MyApplication:
 
-```
+```xml
 <application
     android:name=".MyApplication"
     android:label="@string/app_name"
@@ -156,7 +156,7 @@ We are offering a bleeding edge builds on canary chanel, you can enjoy the new f
 
 * Add repository in your project's build.gradle
 
-```
+```groovy
 buildscript {
     repositories {
         mavenCentral()
@@ -183,7 +183,7 @@ allprojects {
 
 * Change your dependency in your module's build.gradle
 
-```
+```groovy
 apply plugin: 'com.bugtags.library.plugin'
 
 dependencies {
