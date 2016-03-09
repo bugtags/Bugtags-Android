@@ -192,6 +192,11 @@ dependencies {
 ```
 
 # Change log
+### 2016.03.09 v1.1.2
+- fix issue: under some circumstance bubble disappears 
+- fix ineffective sslv3 solution in v1.1.1
+- other bug fix
+- 
 ### 2016.02.20 v1.1.1
 
 - Java 1.6 compatibility
