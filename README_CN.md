@@ -183,6 +183,14 @@ dependencies {
 ```
 
 # Change log
+### 2016.03.12 v1.2.0
+- 新增网络请求跟踪功能（支持 HTTP / HTTPS），默认禁用，在插件配置中设置 `trackingNetworkEnabled true` 开启；
+- 新增在 `BTGInvocationEventBubble` 模式下，可通过 Bugtags 后台动态改变集成模式；
+- 修复登陆后指派人获取失败的问题；
+- 修复横竖屏切换小球消失的问题；
+- 修复优先级切换 ui 显示的问题；
+- 优化一些细节；
+
 ### 2016.03.09 v1.1.2
 
 - 修复某些情况下小球可能会消失的问题

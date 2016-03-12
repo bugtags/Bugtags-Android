@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.1.1"
-def VERSION_CODE = 12
+def VERSION_NAME = "1.2.0"
+def VERSION_CODE = 14
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -43,6 +43,8 @@ apply plugin: 'com.bugtags.library.plugin'
 bugtags {
     appKey "d3ad445a39bf60628f7acd4bd08eff4f"
     appSecret "e01dfb622b45cce0235fe2cc0b0b3798"
+
+    trackingNetworkEnabled true //开启网络请求跟踪功能(企业版)
 }
 
 dependencies {

@@ -192,6 +192,14 @@ dependencies {
 ```
 
 # Change log
+### 2016.03.12 v1.2.0
+- network request tracking（support HTTP / HTTPS protocol），diable by default, set `trackingNetworkEnabled true` to open
+- retrieve buble mode from server configuration
+- fix issue: assignee list retrieving error
+- fix issue: rotation make bubble disappear
+- fix issue: ui appearance after priority set
+- other bug fix
+
 ### 2016.03.09 v1.1.2
 - fix issue: under some circumstance bubble disappears 
 - fix ineffective sslv3 solution in v1.1.1
