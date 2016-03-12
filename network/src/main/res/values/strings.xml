@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NetworkApp</string>
+    <string name="title_activity_http_client">HttpClientActivity</string>
+    <string name="title_activity_url">UrlActivity</string>
+    <string name="title_activity_json">JsonActivity</string>
+    <string name="title_activity_input_stream">InputStreamActivity</string>
+    <string name="title_activity_okhttp">OkhttpActivity</string>
+    <string name="title_activity_okhttp2">Okhttp2Activity</string>
+</resources>
