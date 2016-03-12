@@ -193,11 +193,11 @@ dependencies {
 
 # Change log
 ### 2016.03.12 v1.2.0
-- network request tracking（support HTTP / HTTPS protocol），disable by default, set `trackingNetworkEnabled true` to open, please refer:[network](network)
+- network request tracking(support HTTP / HTTPS protocol)，disable by default, set `trackingNetworkEnabled true` to open, please refer:[network-demo](network)
 - retrieve bubble mode from server configuration
 - fix issue: assignee list retrieving error
 - fix issue: rotation make bubble disappear
-- fix issue: ui appearance after priority set
+- fix issue: ui appearance not changed after priority set
 - other bug fix
 
 ### 2016.03.09 v1.1.2
