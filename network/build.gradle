@@ -13,7 +13,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1.2.1"
     }
 
     packagingOptions {
@@ -30,12 +30,16 @@ android {
     }
 }
 
+task appStart(type: Exec, dependsOn: 'installDebug') {
+    commandLine android.adbExe, 'shell', 'am', 'start', '-n', 'com.bugtag.networkapp/.MainActivity'
+}
+
 apply plugin: 'com.bugtags.library.plugin'
 
 //自动上传插件
 bugtags {
-    appKey "d3ad445a39bf60628f7acd4bd08eff4f"  //这里是你的 appKey
-    appSecret "e01dfb622b45cce0235fe2cc0b0b3798"    //这里是你的 appSecret，管理员在设置页可以查看
+    appKey "8f443d183b1d202a5b006faa4718e1a6"  //这里是你的 appKey
+    appSecret "9650f5388807226df23ba836fbacaaf6"    //这里是你的 appSecret，管理员在设置页可以查看
 
     mappingUploadEnabled false
 
@@ -48,10 +52,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.bugtags.library:bugtags-lib:1.2.1'
 
+    compile 'com.squareup.okhttp:okhttp:1.6.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+
+    compile 'com.squareup.okhttp:okhttp:1.6.0'
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
 
     compile('org.apache.httpcomponents:httpmime:4.3.6') {
         exclude module: 'httpclient'

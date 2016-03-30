@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.bugtag.networkapp.R;
-import com.bugtags.library.agent.Agent;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,5 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void okhttp2(View v) {
         startActivity(new Intent(this, Okhttp2Activity.class));
+    }
+
+    public void okhttp3(View v) {
+        startActivity(new Intent(this, Okhttp3Activity.class));
+    }
+
+    public void loopj(View v) {
+        startActivity(new Intent(this, LoopjActivity.class));
+    }
+    public void retrofit(View v) {
+        startActivity(new Intent(this, RetrofitActivity.class));
     }
 }

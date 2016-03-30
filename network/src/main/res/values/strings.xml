@@ -6,4 +6,7 @@
     <string name="title_activity_input_stream">InputStreamActivity</string>
     <string name="title_activity_okhttp">OkhttpActivity</string>
     <string name="title_activity_okhttp2">Okhttp2Activity</string>
+    <string name="title_activity_okhttp3">Okhttp3Activity</string>
+    <string name="title_activity_loopj">LoopjActivity</string>
+    <string name="title_activity_retrofit">RetrofitActivity</string>
 </resources>

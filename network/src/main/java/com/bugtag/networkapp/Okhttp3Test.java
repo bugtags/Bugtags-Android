@@ -10,13 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -24,10 +24,10 @@ import java.io.IOException;
 /**
  * Created by bugtags.com on 16/3/8.
  */
-public class Okhttp2Test {
+public class Okhttp3Test {
 
     private static final String HOST_PREFIX = "http://192.168.1.105:8080";
-    private static final String TAG = "Okhttp2Test";
+    private static final String TAG = "Okhttp3Test";
     static Handler handler = new Handler(Looper.getMainLooper());
 
     static OkHttpClient okHttpClient = new OkHttpClient();
@@ -106,7 +106,7 @@ public class Okhttp2Test {
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
         urlStr = "http://baidu.com";
 
-        RequestBody body = new FormEncodingBuilder().
+        RequestBody body = new FormBody.Builder().
                 add("name", "hello").
                 add("p1", "1").
                 add("p2", "2").
@@ -132,6 +132,7 @@ public class Okhttp2Test {
         urlStr = "http://baidu.com";
 
         //bitmap
+
         Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -140,8 +141,8 @@ public class Okhttp2Test {
         String attachmentName = "bitmap";
         String attachmentFileName = "bitmap.png";
 
-        RequestBody body = new MultipartBuilder().
-                type(MultipartBuilder.FORM).
+        RequestBody body = new MultipartBody.Builder().
+                setType(MultipartBody.FORM).
                 addFormDataPart(attachmentName, attachmentFileName, RequestBody.create(MediaType.parse("image/png"), stream.toByteArray())).
                 build();
 

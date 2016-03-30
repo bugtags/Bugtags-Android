@@ -183,6 +183,14 @@ dependencies {
 ```
 
 # Change log
+### 2016.03.30 v1.2.1
+- 增加对 `okhttp3` 的网络请求跟踪的支持
+- 增加对 `loopj/android-async-http` 的网络请求跟踪的支持
+- 增加 `uploadDataOnlyViaWiFi` 启动选项，允许只在 WiFi 网络条件下上传问题
+- 增加 `currentInvocationEvent` api，用于获取当前呼出方式
+- 其他优化
+
+
 ### 2016.03.12 v1.2.0
 - 新增网络请求跟踪功能（支持 HTTP / HTTPS），默认禁用，在插件配置中设置 `trackingNetworkEnabled true` 开启；
 - 新增在 `BTGInvocationEventBubble` 模式下，可通过 Bugtags 后台动态改变集成模式；

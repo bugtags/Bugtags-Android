@@ -52,6 +52,21 @@
             android:onClick="okhttp2"
             android:text="okhttp2" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="okhttp3"
+            android:text="okhttp3" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="retrofit"
+            android:text="retrofit" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="loopj"
+            android:text="loopj" />
 
     </LinearLayout>
 

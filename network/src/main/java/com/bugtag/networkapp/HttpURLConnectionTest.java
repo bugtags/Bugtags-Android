@@ -64,7 +64,6 @@ public class HttpURLConnectionTest {
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";
-
         urlStr = "http://baidu.com";
         try {
 
@@ -109,7 +108,6 @@ public class HttpURLConnectionTest {
     public static void getJson() {
         trustEveryone();
         String urlStr = HOST_PREFIX + "/get/json?xxx=bb";
-
         urlStr = "http://baidu.com";
         try {
             URL url = new URL(urlStr);
@@ -148,7 +146,6 @@ public class HttpURLConnectionTest {
     public static void getFile(final View view) {
         trustEveryone();
         String urlStr = HOST_PREFIX + "/get/file?xxx=bb";
-
         urlStr = "http://baidu.com";
         try {
             URL url = new URL(urlStr);
@@ -188,8 +185,6 @@ public class HttpURLConnectionTest {
     public static void postUrlencode() {
         trustEveryone();
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
-
-
         urlStr = "http://baidu.com";
 
         try {
@@ -241,10 +236,7 @@ public class HttpURLConnectionTest {
     public static void postMultipart(Activity activity) {
         trustEveryone();
         String urlStr = HOST_PREFIX + "/post/multer";
-
-
         urlStr = "http://baidu.com";
-
         //bitmap
         Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
 

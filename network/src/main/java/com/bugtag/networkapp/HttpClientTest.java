@@ -46,9 +46,7 @@ public class HttpClientTest {
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html";
-
         urlStr = "http://baidu.com";
-
         HttpGet get = new HttpGet(urlStr);
         try {
             HttpHost host = new HttpHost(urlStr);
@@ -86,7 +84,6 @@ public class HttpClientTest {
 
     public static void getJson() {
         String urlStr = HOST_PREFIX + "/get/json";
-
         urlStr = "http://baidu.com";
 
         HttpGet get = new HttpGet(urlStr);
@@ -117,7 +114,6 @@ public class HttpClientTest {
     public static void getFile(final View view) {
         String urlStr = HOST_PREFIX + "/get/file";
         urlStr = "http://baidu.com";
-
         HttpGet get = new HttpGet(urlStr);
         try {
             HttpResponse response = httpClient.execute(get);
@@ -146,7 +142,6 @@ public class HttpClientTest {
 
     public static void postUrlencode() {
         String urlStr = HOST_PREFIX + "/post/encode";
-
         urlStr = "http://baidu.com";
 
         HttpPost post = new HttpPost(urlStr);
@@ -191,7 +186,6 @@ public class HttpClientTest {
 
     public static void postMultipart(Activity activity) {
         String urlStr = HOST_PREFIX + "/post/multer";
-
         urlStr = "http://baidu.com";
 
         HttpPost post = new HttpPost(urlStr);
