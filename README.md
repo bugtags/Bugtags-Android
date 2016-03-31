@@ -192,9 +192,9 @@ dependencies {
 ```
 
 # Change log
-
-### 2016.03.31 v1.2.2
+### 2016.03.31 v1.2.3
 - remove a dependency is not used
+- fix bug when network switching
 
 ### 2016.03.30 v1.2.1
 - support `okhttp3` network request tracking
