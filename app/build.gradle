@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.2.1"
-def VERSION_CODE = 15
+def VERSION_NAME = "1.2.2"
+def VERSION_CODE = 16
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -46,11 +46,10 @@ bugtags {
     mappingUploadEnabled false
 
     trackingNetworkEnabled false //开启网络请求跟踪功能(企业版)
-
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library:bugtags-lib:1.2.1'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
 
 }

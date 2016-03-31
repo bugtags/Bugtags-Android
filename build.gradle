@@ -2,36 +2,20 @@
 
 buildscript {
     repositories {
-        maven{
-            url 'http://dl.bintray.com/bugtags/maven'
-        }
-        maven {
-            url 'file:///Users/changbinhe/Documents/Android/repo/'
-        }
-        jcenter {
-            url 'http://jcenter.bintray.com/'
-        }
+        jcenter()
         mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.0-alpha4'
 
-        classpath 'com.bugtags.library:bugtags-gradle:1.2.2'
+        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
 }
 
 allprojects {
     repositories {
-        maven{
-            url 'http://dl.bintray.com/bugtags/maven'
-        }
-        maven {
-            url 'file:///Users/changbinhe/Documents/Android/repo/'
-        }
+        jcenter()
         mavenCentral()
-        jcenter {
-            url 'http://jcenter.bintray.com'
-        }
     }
 }
 
