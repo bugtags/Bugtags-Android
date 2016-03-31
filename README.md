@@ -193,13 +193,15 @@ dependencies {
 
 # Change log
 
+### 2016.03.31 v1.2.2
+- remove a dependency is not used
+
 ### 2016.03.30 v1.2.1
 - support `okhttp3` network request tracking
 - support `loopj/android-async-http` network request tracking
 - add `uploadDataOnlyViaWiFi` start option, allow only send in WiFi network
 - add `currentInvocationEvent` api, accessing the current invocation mode
 - other fix
-
 
 ### 2016.03.12 v1.2.0
 - network request tracking(support HTTP / HTTPS protocol)，disable by default, set `trackingNetworkEnabled true` to open, please refer:[network-demo](network)

@@ -183,6 +183,9 @@ dependencies {
 ```
 
 # Change log
+### 2016.03.31 v1.2.2
+- 移除一个未使用的远程包依赖
+
 ### 2016.03.30 v1.2.1
 - 增加对 `okhttp3` 的网络请求跟踪的支持
 - 增加对 `loopj/android-async-http` 的网络请求跟踪的支持
