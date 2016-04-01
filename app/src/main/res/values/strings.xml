@@ -13,7 +13,7 @@
     <string name="main_custom">自定义继承</string>
     <string name="main_config">快速配置</string>
     <string name="main_functions">功能介绍</string>
-    <string name="main_born">为移动测试而生：bugtags.com</string>
+    <string name="main_born">移动时代首选 Bug 管理系统</string>
 
     <!--config-->
     <string name="config_user_step">设置是否记录用户操作步骤</string>
