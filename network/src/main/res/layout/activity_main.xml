@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.bugtag.networkapp.MainActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="com.bugtag.networkapp.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,55 +18,63 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="httpclient"
-            android:text="httpclient" />
+            android:text="httpclient"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="urlconnection"
-            android:text="urlconnection" />
+            android:text="urlconnection"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="json"
-            android:text="json" />
+            android:text="json"/>
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="inputstream"
-            android:text="inputstream" />
+            android:text="inputstream"/>
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="okhttp"
-            android:text="okhttp" />
+            android:text="okhttp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="okhttp2"
-            android:text="okhttp2" />
+            android:text="okhttp2"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="okhttp3"
-            android:text="okhttp3" />
+            android:text="okhttp3"/>
+
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="retrofit"
-            android:text="retrofit" />
+            android:text="retrofit"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="retrofit1x"
+            android:text="retrofit1x"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="loopj"
-            android:text="loopj" />
+            android:text="loopj"/>
 
     </LinearLayout>
 

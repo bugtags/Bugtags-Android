@@ -9,4 +9,5 @@
     <string name="title_activity_okhttp3">Okhttp3Activity</string>
     <string name="title_activity_loopj">LoopjActivity</string>
     <string name="title_activity_retrofit">RetrofitActivity</string>
+    <string name="title_activity_retrofit1x">Retrofit1xActivity</string>
 </resources>

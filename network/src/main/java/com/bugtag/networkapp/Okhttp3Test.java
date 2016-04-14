@@ -34,7 +34,6 @@ public class Okhttp3Test {
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";
-        urlStr = "http://baidu.com";
 
         Request request = new Request.Builder().
                 url(urlStr).
@@ -54,7 +53,6 @@ public class Okhttp3Test {
 
     public static void getJson() {
         String urlStr = HOST_PREFIX + "/get/json?xxx=bb";
-        urlStr = "http://baidu.com";
         Request request = new Request.Builder().
                 addHeader("a", "b").
                 addHeader("b", "c").
@@ -75,7 +73,6 @@ public class Okhttp3Test {
 
     public static void getFile(final View view) {
         String urlStr = HOST_PREFIX + "/get/file?xxx=bb";
-        urlStr = "http://baidu.com";
         Request request = new Request.Builder().
                 url(urlStr).
                 addHeader("a", "b").
@@ -104,7 +101,6 @@ public class Okhttp3Test {
 
     public static void postUrlencode() {
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
-        urlStr = "http://baidu.com";
 
         RequestBody body = new FormBody.Builder().
                 add("name", "hello").
@@ -129,7 +125,6 @@ public class Okhttp3Test {
 
     public static void postMultipart(Activity activity) {
         String urlStr = HOST_PREFIX + "/post/multer";
-        urlStr = "http://baidu.com";
 
         //bitmap
 

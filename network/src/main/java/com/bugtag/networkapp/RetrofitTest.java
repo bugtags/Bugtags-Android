@@ -13,23 +13,14 @@ import android.widget.Button;
 import com.bugtag.networkapp.retrofit.Api;
 import com.bugtag.networkapp.retrofit.Model;
 import com.bugtag.networkapp.retrofit.ToStringConverterFactory;
-import com.google.gson.ExclusionStrategy;
-import com.google.gson.FieldAttributes;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import okhttp3.FormBody;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitTest {
 
-    private static final String HOST_PREFIX = "http://baidu.com";
+    private static final String HOST_PREFIX = "http://192.168.1.105:8080";
     private static final String TAG = "Okhttp3Test";
     static Handler handler = new Handler(Looper.getMainLooper());
 
@@ -63,7 +54,7 @@ public class RetrofitTest {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-
+                Log.d(TAG, call.toString());
             }
         });
     }
@@ -79,6 +70,7 @@ public class RetrofitTest {
             @Override
             public void onFailure(Call<Model.HttpResponse> call, Throwable t) {
 
+                Log.d(TAG, call.toString());
             }
         });
     }
@@ -104,6 +96,7 @@ public class RetrofitTest {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+                Log.d(TAG, call.toString());
             }
         });
 
@@ -124,6 +117,7 @@ public class RetrofitTest {
             @Override
             public void onFailure(Call<Model.HttpResponse> call, Throwable t) {
 
+                Log.d(TAG, call.toString());
             }
         });
 
@@ -156,6 +150,7 @@ public class RetrofitTest {
             @Override
             public void onFailure(Call<Model.HttpResponse> call, Throwable t) {
 
+                Log.d(TAG, call.toString());
             }
         });
     }

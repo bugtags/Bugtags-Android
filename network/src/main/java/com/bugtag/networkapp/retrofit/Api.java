@@ -1,15 +1,10 @@
 package com.bugtag.networkapp.retrofit;
 
-import com.google.gson.Gson;
-
 import java.util.Map;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;

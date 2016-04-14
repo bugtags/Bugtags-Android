@@ -34,7 +34,6 @@ public class LoopjTest {
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";
-        urlStr = "http://baidu.com";
 
         mAsyncHttpClient.addHeader("a", "b");
         mAsyncHttpClient.addHeader("b", "c");
@@ -55,7 +54,6 @@ public class LoopjTest {
 
     public static void getJson() {
         String urlStr = HOST_PREFIX + "/get/json?xxx=bb";
-        urlStr = "http://baidu.com";
 
         mAsyncHttpClient.get(urlStr, new AsyncHttpResponseHandler() {
             @Override
@@ -73,7 +71,6 @@ public class LoopjTest {
 
     public static void getFile(final View view) {
         String urlStr = HOST_PREFIX + "/get/file?xxx=bb";
-        urlStr = "http://baidu.com";
         mAsyncHttpClient.get(urlStr, new BinaryHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -99,7 +96,6 @@ public class LoopjTest {
 
     public static void postUrlencode() {
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
-        urlStr = "http://baidu.com";
 
         RequestParams requestParams = new RequestParams();
         requestParams.put("name", "hello");
@@ -120,7 +116,6 @@ public class LoopjTest {
 
     public static void postMultipart(Activity activity) {
         String urlStr = HOST_PREFIX + "/post/multer";
-        urlStr = "http://baidu.com";
 
         RequestParams requestParams = new RequestParams();
         requestParams.put("name", "hello");

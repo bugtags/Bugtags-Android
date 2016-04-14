@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.MultipartBuilder;
@@ -34,7 +35,6 @@ public class Okhttp2Test {
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";
-        urlStr = "http://baidu.com";
 
         Request request = new Request.Builder().
                 url(urlStr).
@@ -44,7 +44,6 @@ public class Okhttp2Test {
         Log.d(TAG, urlStr);
         try {
             Response response = okHttpClient.newCall(request).execute();
-
             Log.d(TAG, response.body().string());
 
         } catch (IOException e) {
@@ -54,28 +53,28 @@ public class Okhttp2Test {
 
     public static void getJson() {
         String urlStr = HOST_PREFIX + "/get/json?xxx=bb";
-        urlStr = "http://baidu.com";
         Request request = new Request.Builder().
                 addHeader("a", "b").
                 addHeader("b", "c").
                 url(urlStr).
                 build();
 
-
         Log.d(TAG, urlStr);
-        try {
-            Response response = okHttpClient.newCall(request).execute();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                Log.d(TAG, request.toString());
+            }
 
-            Log.d(TAG, response.body().string());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            @Override
+            public void onResponse(Response response) throws IOException {
+                Log.d(TAG, response.body().string());
+            }
+        });
     }
 
     public static void getFile(final View view) {
         String urlStr = HOST_PREFIX + "/get/file?xxx=bb";
-        urlStr = "http://baidu.com";
         Request request = new Request.Builder().
                 url(urlStr).
                 addHeader("a", "b").
@@ -84,6 +83,7 @@ public class Okhttp2Test {
         Log.d(TAG, urlStr);
         try {
             Response response = okHttpClient.newCall(request).execute();
+            Log.d(TAG, "getFile" + response.toString());
 
             final Bitmap bitmap = BitmapFactory.decodeStream(response.body().byteStream());
 
@@ -104,7 +104,6 @@ public class Okhttp2Test {
 
     public static void postUrlencode() {
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
-        urlStr = "http://baidu.com";
 
         RequestBody body = new FormEncodingBuilder().
                 add("name", "hello").
@@ -129,7 +128,6 @@ public class Okhttp2Test {
 
     public static void postMultipart(Activity activity) {
         String urlStr = HOST_PREFIX + "/post/multer";
-        urlStr = "http://baidu.com";
 
         //bitmap
         Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
