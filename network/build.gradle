@@ -13,7 +13,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1.2.1"
     }
 
     packagingOptions {
@@ -34,7 +34,6 @@ task appStart(type: Exec, dependsOn: 'installDebug') {
     commandLine android.adbExe, 'shell', 'am', 'start', '-n', 'com.bugtag.networkapp/.MainActivity'
 }
 
-
 apply plugin: 'com.bugtags.library.plugin'
 
 //自动上传插件
@@ -53,12 +52,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
-    //compile project(':bugtags-lib')
-    compile 'com.bugtags.library-canary:bugtags-lib:1.2.4'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
 
     compile 'com.squareup.okhttp:okhttp:1.6.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    //compile 'com.squareup.okhttp:okhttp:2.4.0'
 
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
@@ -73,3 +70,4 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
     compile('org.apache.httpcomponents:httpcore:4.0')
 }
+
