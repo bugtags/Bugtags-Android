@@ -73,4 +73,3 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
     compile('org.apache.httpcomponents:httpcore:4.0')
 }
-

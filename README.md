@@ -192,6 +192,13 @@ dependencies {
 ```
 
 # Change log
+# 2016.04.14 v1.2.4
+- fix bug in network tracking in okhttp
+- fix bug in screenshot on devices with soft navigation bar
+- catch exception that might happen in screenshot
+- tune timeout for data upload, to prevent error in bad quality network
+- fix ssl error happen in sending data via https
+
 ### 2016.03.31 v1.2.3
 - remove a dependency is not used
 - fix bug when network switching
