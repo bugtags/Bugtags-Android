@@ -10,4 +10,5 @@
     <string name="title_activity_loopj">LoopjActivity</string>
     <string name="title_activity_retrofit">RetrofitActivity</string>
     <string name="title_activity_retrofit1x">Retrofit1xActivity</string>
+    <string name="title_activity_volley">VolleyActivity</string>
 </resources>

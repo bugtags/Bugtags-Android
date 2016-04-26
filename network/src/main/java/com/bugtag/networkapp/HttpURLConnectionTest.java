@@ -10,8 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.bugtag.networkapp.R;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -36,7 +34,7 @@ import javax.net.ssl.X509TrustManager;
  */
 public class HttpURLConnectionTest {
 
-    private static final String HOST_PREFIX = "https://192.168.1.105";
+    private static final String HOST_PREFIX = "http://192.168.1.105:8080";
     private static final String TAG = "HttpURLConnectionTest";
     static Handler handler = new Handler(Looper.getMainLooper());
 
@@ -65,8 +63,6 @@ public class HttpURLConnectionTest {
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";
         try {
-
-            trustEveryone();
             URL url = new URL(urlStr);
 
             try {
@@ -105,7 +101,6 @@ public class HttpURLConnectionTest {
     }
 
     public static void getJson() {
-        trustEveryone();
         String urlStr = HOST_PREFIX + "/get/json?xxx=bb";
         try {
             URL url = new URL(urlStr);
@@ -142,7 +137,6 @@ public class HttpURLConnectionTest {
     }
 
     public static void getFile(final View view) {
-        trustEveryone();
         String urlStr = HOST_PREFIX + "/get/file?xxx=bb";
         try {
             URL url = new URL(urlStr);
@@ -180,7 +174,6 @@ public class HttpURLConnectionTest {
     }
 
     public static void postUrlencode() {
-        trustEveryone();
         String urlStr = HOST_PREFIX + "/post/encode?xxx=bb";
 
         try {
@@ -230,7 +223,6 @@ public class HttpURLConnectionTest {
     }
 
     public static void postMultipart(Activity activity) {
-        trustEveryone();
         String urlStr = HOST_PREFIX + "/post/multer";
         //bitmap
         Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);

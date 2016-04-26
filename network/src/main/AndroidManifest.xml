@@ -63,6 +63,11 @@
             android:label="@string/title_activity_retrofit1x"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".VolleyActivity"
+            android:label="@string/title_activity_volley"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

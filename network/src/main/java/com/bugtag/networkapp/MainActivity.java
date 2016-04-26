@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, Okhttp3Activity.class));
     }
 
+    public void volley(View v) {
+        startActivity(new Intent(this, VolleyActivity.class));
+    }
     public void loopj(View v) {
         startActivity(new Intent(this, LoopjActivity.class));
     }
