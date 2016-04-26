@@ -34,110 +34,17 @@ task appStart(type: Exec, dependsOn: 'installDebug') {
     commandLine android.adbExe, 'shell', 'am', 'start', '-n', 'com.bugtag.networkapp/.MainActivity'
 }
 
-
-import com.sun.tools.attach.VirtualMachine
-import java.lang.management.ManagementFactory
-
-class BaseTask extends DefaultTask {
-
-    static String filePath;
-    static String pid;
-
-    static {
-        filePath = (new File('/Users/changbinhe/Documents/git/bt/Bugtags-Agent/dist/rewrite-agent.jar')).canonicalPath;
-
-        String nameOfRunningVm = ManagementFactory.getRuntimeMXBean().getName()
-        int p = nameOfRunningVm.indexOf('@')
-        pid = nameOfRunningVm.subSequence(0, p)
-    }
-
-    static String getJarPath() {
-        return filePath;
-    }
-
-    static String getPid() {
-        return pid;
-    }
-
-}
-
-class BugtagsInstrumentTask extends BaseTask {
-
-    static final String NAME = 'bugtagsInstumentTask'
-
-    @TaskAction
-    void run() {
-        try {
-            println(getJarPath())
-
-            VirtualMachine vm = VirtualMachine.attach(getPid())
-            vm.loadAgent(getJarPath(), "debug=1;network=1")
-            vm.detach()
-        }
-        catch (Exception e) {
-            e.printStackTrace()
-        }
-    }
-}
-
-class BugtagsDeinstrumentTask extends BaseTask {
-    static final String NAME = 'bugtagsDeinstrumentTask'
-
-    @TaskAction
-    def run() {
-        try {
-            VirtualMachine vm = VirtualMachine.attach(getPid())
-            vm.loadAgent(getJarPath(), "deinstrument=1")
-            vm.detach()
-        }
-        catch (Exception e) {
-            e.printStackTrace()
-        }
-    }
-}
-
-public class BugtagsPlugin implements Plugin<Project> {
-    BugtagsInstrumentTask instrumentTask
-    BugtagsDeinstrumentTask deinstrumentTask;
-
-    @Override
-    void apply(Project target) {
-        instrumentTask = target.tasks.create(BugtagsInstrumentTask.NAME, BugtagsInstrumentTask.class)
-        deinstrumentTask = target.tasks.create(BugtagsDeinstrumentTask.NAME, BugtagsDeinstrumentTask.class)
-
-        target.configure(target) {
-            if (it.hasProperty('android')) {
-                tasks.whenTaskAdded { task ->
-                    project.('android').applicationVariants.all { variant ->
-
-                        def expectingTask = "dex${variant.name.capitalize()}".toString()
-                        def expectingTask2 = "transformClassesWithDexFor${variant.name.capitalize()}".toString();
-
-                        if (expectingTask.equals(task.name) || expectingTask2.equals(task.name)) {
-                            task.dependsOn instrumentTask.name
-
-                            task.finalizedBy deinstrumentTask
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-apply plugin: BugtagsPlugin
-
-//apply plugin: 'com.bugtags.library.plugin'
+apply plugin: 'com.bugtags.library.plugin'
 
 //自动上传插件
-//bugtags {
-//    appKey "8f443d183b1d202a5b006faa4718e1a6"  //这里是你的 appKey
-//    appSecret "9650f5388807226df23ba836fbacaaf6"    //这里是你的 appSecret，管理员在设置页可以查看
-//
-//    mappingUploadEnabled false
-//
-//    trackingNetworkEnabled true
-//}
+bugtags {
+    appKey "8f443d183b1d202a5b006faa4718e1a6"  //这里是你的 appKey
+    appSecret "9650f5388807226df23ba836fbacaaf6"    //这里是你的 appSecret，管理员在设置页可以查看
+
+    mappingUploadEnabled false
+
+    trackingNetworkEnabled true
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -145,9 +52,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
-    compile project(':bugtags-lib')
-    //compile 'com.bugtags.library-canary:bugtags-lib:1.2.4@aar'
-    //compile 'com.android.support:support-v4:19.0.0'
+    compile 'com.bugtags.library-canary:bugtags-lib:1.2.4@aar'
+    compile 'com.android.support:support-v4:19.0.0'
 
     compile 'com.mcxiaoke.volley:library:1.0.19'
 
