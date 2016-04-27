@@ -3,10 +3,7 @@
 buildscript {
     repositories {
         maven {
-            url 'file:///Users/changbinhe/Documents/Android/repo/'
-        }
-        maven {
-            url 'https://dl.bintray.com/bugtags/maven'
+            url 'http://dl.bintray.com/bugtags/maven'
         }
         jcenter()
         mavenCentral()
@@ -21,10 +18,7 @@ buildscript {
 allprojects {
     repositories {
         maven {
-            url 'file:///Users/changbinhe/Documents/Android/repo/'
-        }
-        maven {
-            url 'https://dl.bintray.com/bugtags/maven'
+            url 'http://dl.bintray.com/bugtags/maven'
         }
         jcenter()
         mavenCentral()

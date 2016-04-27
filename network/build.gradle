@@ -52,8 +52,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
-    compile 'com.bugtags.library-canary:bugtags-lib:1.2.4@aar'
-    compile 'com.android.support:support-v4:19.0.0'
+    compile 'com.bugtags.library-canary:bugtags-lib:1.2.5'
 
     compile 'com.mcxiaoke.volley:library:1.0.19'
 
