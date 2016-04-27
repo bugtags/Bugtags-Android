@@ -21,18 +21,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, UrlActivity.class));
     }
 
-    public void json(View view) {
-        startActivity(new Intent(this, JsonActivity.class));
-    }
-
-    public void inputstream(View v) {
-        startActivity(new Intent(this, InputStreamActivity.class));
-    }
-
-    public void okhttp(View v) {
-        startActivity(new Intent(this, OkhttpActivity.class));
-    }
-
     public void okhttp2(View v) {
         startActivity(new Intent(this, Okhttp2Activity.class));
     }
@@ -47,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     public void loopj(View v) {
         startActivity(new Intent(this, LoopjActivity.class));
     }
-    public void retrofit(View v) {
-        startActivity(new Intent(this, RetrofitActivity.class));
+    public void retrofit2(View v) {
+        startActivity(new Intent(this, Retrofit2Activity.class));
     }
     public void retrofit1x(View v) {
         startActivity(new Intent(this, Retrofit1xActivity.class));

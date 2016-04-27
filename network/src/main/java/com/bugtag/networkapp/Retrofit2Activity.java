@@ -7,16 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
-public class InputStreamActivity extends AppCompatActivity {
+public class Retrofit2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_stream);
+        setContentView(R.layout.activity_retrofit2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,18 +26,24 @@ public class InputStreamActivity extends AppCompatActivity {
         });
     }
 
-    public void inputstream(View view) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        try {
-            byteArrayOutputStream.write("a".getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void getHtml(View view) {
+        Retrofit2Test.getHtml();
     }
 
-    public void outputstream(View view) {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("a".getBytes());
-
-
+    public void getJson(View view) {
+        Retrofit2Test.getJson();
     }
+
+    public void getFile(final View view) {
+        Retrofit2Test.getFile(view);
+    }
+
+    public void postUrlencode(View view) {
+        Retrofit2Test.postUrlencode();
+    }
+
+    public void postMultipart(View view) {
+        Retrofit2Test.postMultipart(Retrofit2Activity.this);
+    }
+
 }

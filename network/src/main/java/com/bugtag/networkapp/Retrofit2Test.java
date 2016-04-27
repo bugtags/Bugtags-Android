@@ -30,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by bugtags.com on 16/3/8.
  */
-public class RetrofitTest {
+public class Retrofit2Test {
 
     private static final String HOST_PREFIX = "http://192.168.1.105:8080";
     private static final String TAG = "Okhttp3Test";

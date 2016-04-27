@@ -29,26 +29,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="json"
-            android:text="json"/>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="inputstream"
-            android:text="inputstream"/>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="okhttp"
-            android:text="okhttp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:onClick="okhttp2"
             android:text="okhttp2"/>
 
@@ -62,8 +42,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="retrofit"
-            android:text="retrofit"/>
+            android:onClick="retrofit2"
+            android:text="retrofit2"/>
 
         <Button
             android:layout_width="wrap_content"
