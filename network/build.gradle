@@ -12,8 +12,8 @@ android {
         applicationId "com.bugtag.networkapp"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 20
+        versionName "1.2.5"
     }
 
     packagingOptions {
