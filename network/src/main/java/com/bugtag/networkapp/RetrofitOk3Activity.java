@@ -7,12 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class RetrofitActivity extends AppCompatActivity {
+public class RetrofitOk3Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit);
+        setContentView(R.layout.activity_retrofit_ok3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -24,26 +24,28 @@ public class RetrofitActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        RetrofitOk3Test.init(this);
     }
 
     public void getHtml(View view) {
-        RetrofitTest.getHtml();
+        RetrofitOk3Test.getHtml();
     }
 
     public void getJson(View view) {
-        RetrofitTest.getJson();
+        RetrofitOk3Test.getJson();
     }
 
     public void getFile(final View view) {
-        RetrofitTest.getFile(view);
+        RetrofitOk3Test.getFile(view);
     }
 
     public void postUrlencode(View view) {
-        RetrofitTest.postUrlencode();
+        RetrofitOk3Test.postUrlencode();
     }
 
     public void postMultipart(View view) {
-        RetrofitTest.postMultipart(RetrofitActivity.this);
+        RetrofitOk3Test.postMultipart(RetrofitOk3Activity.this);
     }
 
 }

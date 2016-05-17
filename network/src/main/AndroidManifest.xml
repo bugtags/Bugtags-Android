@@ -28,18 +28,6 @@
             android:label="@string/title_activity_url"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".JsonActivity"
-            android:label="@string/title_activity_json"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".InputStreamActivity"
-            android:label="@string/title_activity_input_stream"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".OkhttpActivity"
-            android:label="@string/title_activity_okhttp"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
             android:name=".Okhttp2Activity"
             android:label="@string/title_activity_okhttp2"
             android:theme="@style/AppTheme.NoActionBar"/>
@@ -49,7 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".RetrofitActivity"
+            android:name=".Retrofit2Activity"
             android:label="@string/title_activity_retrofit"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -66,6 +54,11 @@
         <activity
             android:name=".VolleyActivity"
             android:label="@string/title_activity_volley"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".RetrofitOk3Activity"
+            android:label="@string/title_activity_retrofit_ok3"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

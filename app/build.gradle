@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.2.3"
-def VERSION_CODE = 18
+def VERSION_NAME = "1.2.6"
+def VERSION_CODE = 21
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -38,14 +38,28 @@ android {
     }
 }
 
+afterEvaluate {
+    android.applicationVariants.each { variant ->
+        def bugtagsAppKey = null;
+        def bugtagsAppSecret = null;
+
+        if (variant.name.contains("debug")) {
+            bugtagsAppKey = 'd3ad445a39bf60628f7acd4bd08eff4f'
+            bugtagsAppSecret = 'e01dfb622b45cce0235fe2cc0b0b3798'
+        } else if (variant.name.contains("release")) {
+            bugtagsAppKey = '186cc7c96a5966b6615b34217b293f4f'
+            bugtagsAppSecret = '76839f82bc02b2e83fb650b9057149f6'
+        }
+
+        variant.ext.bugtagsAppKey = bugtagsAppKey
+        variant.ext.bugtagsAppSecret = bugtagsAppSecret
+    }
+}
+
 apply plugin: 'com.bugtags.library.plugin'
 
 bugtags {
-    appKey "d3ad445a39bf60628f7acd4bd08eff4f"
-    appSecret "e01dfb622b45cce0235fe2cc0b0b3798"
-    mappingUploadEnabled false
-
-    trackingNetworkEnabled false //开启网络请求跟踪功能(企业版)
+    trackingNetworkEnabled true
 }
 
 dependencies {

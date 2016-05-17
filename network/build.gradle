@@ -12,8 +12,8 @@ android {
         applicationId "com.bugtag.networkapp"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 21
+        versionName "1.2.6"
     }
 
     packagingOptions {
@@ -23,26 +23,38 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
-task appStart(type: Exec, dependsOn: 'installDebug') {
-    commandLine android.adbExe, 'shell', 'am', 'start', '-n', 'com.bugtag.networkapp/.MainActivity'
+afterEvaluate {
+    android.applicationVariants.each { variant ->
+        def bugtagsAppKey = null;
+        def bugtagsAppSecret = null;
+
+        if (variant.name.contains("debug")) {
+            bugtagsAppKey = '8f443d183b1d202a5b006faa4718e1a6'
+            bugtagsAppSecret = '9650f5388807226df23ba836fbacaaf6'
+        } else if (variant.name.contains("release")) {
+            bugtagsAppKey = '6ce2e8449a12e6ef10106672cd5030db'
+            bugtagsAppSecret = '717fd5115432f1687f8599ece7b42d0a'
+        }
+
+        variant.ext.bugtagsAppKey = bugtagsAppKey
+        variant.ext.bugtagsAppSecret = bugtagsAppSecret
+    }
 }
 
 apply plugin: 'com.bugtags.library.plugin'
 
-//自动上传插件
 bugtags {
-    appKey "8f443d183b1d202a5b006faa4718e1a6"  //这里是你的 appKey
-    appSecret "9650f5388807226df23ba836fbacaaf6"    //这里是你的 appSecret，管理员在设置页可以查看
-
-    mappingUploadEnabled false
-
     trackingNetworkEnabled true
 }
 
@@ -65,6 +77,8 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
+
+    compile 'com.jakewharton.retrofit:retrofit1-okhttp3-client:1.1.0'
 
     compile('org.apache.httpcomponents:httpmime:4.3.6') {
         exclude module: 'httpclient'

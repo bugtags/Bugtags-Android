@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import okhttp3.Cache;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -19,7 +20,9 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by bugtags.com on 16/3/8.
@@ -30,7 +33,19 @@ public class Okhttp3Test {
     private static final String TAG = "Okhttp3Test";
     static Handler handler = new Handler(Looper.getMainLooper());
 
-    static OkHttpClient okHttpClient = new OkHttpClient();
+    public static void init(Activity activity) {
+        File cacheFile = new File(activity.getApplicationContext().getCacheDir().getAbsolutePath(), "HttpCache");
+        int cacheSize = 10 * 1024 * 1024;
+        Cache cache = new Cache(cacheFile, cacheSize);
+        OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
+        okBuilder.cache(cache);
+        okBuilder.readTimeout(20, TimeUnit.SECONDS);
+        okBuilder.connectTimeout(10, TimeUnit.SECONDS);
+        okBuilder.writeTimeout(20, TimeUnit.SECONDS);
+        okHttpClient = okBuilder.build();
+    }
+
+    static OkHttpClient okHttpClient;
 
     public static void getHtml() {
         String urlStr = HOST_PREFIX + "/get/html?xxx=bb";

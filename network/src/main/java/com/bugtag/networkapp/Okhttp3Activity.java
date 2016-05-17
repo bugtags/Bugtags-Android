@@ -24,6 +24,8 @@ public class Okhttp3Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Okhttp3Test.init(this);
     }
 
     public void getHtml(View view) {

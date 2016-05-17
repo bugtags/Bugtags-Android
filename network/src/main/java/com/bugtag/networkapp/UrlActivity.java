@@ -28,7 +28,7 @@ public class UrlActivity extends AppCompatActivity {
         });
     }
 
-    public void urlconnectionGetHtml(View view) {
+    public void getHtml(View view) {
 
         Async.run(new Runnable() {
             @Override
@@ -38,7 +38,7 @@ public class UrlActivity extends AppCompatActivity {
         });
     }
 
-    public void urlconnectionGetJson(View view) {
+    public void getJson(View view) {
 
         Async.run(new Runnable() {
             @Override
@@ -49,7 +49,7 @@ public class UrlActivity extends AppCompatActivity {
 
     }
 
-    public void urlconnectionGetFile(final View view) {
+    public void getFile(final View view) {
 
         Async.run(new Runnable() {
             @Override
@@ -60,7 +60,7 @@ public class UrlActivity extends AppCompatActivity {
 
     }
 
-    public void urlconnectionPostUrlencode(View view) {
+    public void postUrlencode(View view) {
 
         Async.run(new Runnable() {
             @Override
@@ -71,7 +71,7 @@ public class UrlActivity extends AppCompatActivity {
 
     }
 
-    public void urlconnectionPostMultipart(View view) {
+    public void postMultipart(View view) {
 
         Async.run(new Runnable() {
             @Override
