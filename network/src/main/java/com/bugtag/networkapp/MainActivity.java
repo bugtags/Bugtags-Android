@@ -32,13 +32,20 @@ public class MainActivity extends AppCompatActivity {
     public void volley(View v) {
         startActivity(new Intent(this, VolleyActivity.class));
     }
+
     public void loopj(View v) {
         startActivity(new Intent(this, LoopjActivity.class));
     }
+
     public void retrofit2(View v) {
         startActivity(new Intent(this, Retrofit2Activity.class));
     }
+
     public void retrofit1x(View v) {
         startActivity(new Intent(this, Retrofit1xActivity.class));
+    }
+
+    public void retrofitOk3(View v) {
+        startActivity(new Intent(this, RetrofitOk3Activity.class));
     }
 }

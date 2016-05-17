@@ -54,6 +54,12 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="retrofitOk3"
+            android:text="retrofitOk3"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="loopj"
             android:text="loopj"/>
 

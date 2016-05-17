@@ -22,8 +22,8 @@ public class MyApplication extends Application {
                 trackingConsoleLog(true).//是否收集console log
                 trackingUserSteps(true).//是否收集用户操作步骤
                 build();
-        Bugtags.start("d3ad445a39bf60628f7acd4bd08eff4f", this, Bugtags.BTGInvocationEventBubble, options);
 
+        Bugtags.start(BuildConfig.DEBUG ? "d3ad445a39bf60628f7acd4bd08eff4f" : "186cc7c96a5966b6615b34217b293f4f", this, Bugtags.BTGInvocationEventBubble, options);
 
         Bugtags.setBeforeSendingCallback(new BugtagsCallback() {
             @Override

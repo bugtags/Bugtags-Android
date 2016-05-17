@@ -7,12 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Okhttp3Activity extends AppCompatActivity {
+public class RetrofitOk3Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_okhttp3);
+        setContentView(R.layout.activity_retrofit_ok3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -25,53 +25,27 @@ public class Okhttp3Activity extends AppCompatActivity {
             }
         });
 
-        Okhttp3Test.init(this);
+        RetrofitOk3Test.init(this);
     }
 
     public void getHtml(View view) {
-
-        Async.run(new Runnable() {
-            @Override
-            public void run() {
-                Okhttp3Test.getHtml();
-            }
-        });
+        RetrofitOk3Test.getHtml();
     }
 
     public void getJson(View view) {
-        Async.run(new Runnable() {
-            @Override
-            public void run() {
-                Okhttp3Test.getJson();
-            }
-        });
+        RetrofitOk3Test.getJson();
     }
 
     public void getFile(final View view) {
-        Async.run(new Runnable() {
-            @Override
-            public void run() {
-                Okhttp3Test.getFile(view);
-            }
-        });
+        RetrofitOk3Test.getFile(view);
     }
 
     public void postUrlencode(View view) {
-        Async.run(new Runnable() {
-            @Override
-            public void run() {
-                Okhttp3Test.postUrlencode();
-            }
-        });
+        RetrofitOk3Test.postUrlencode();
     }
 
     public void postMultipart(View view) {
-        Async.run(new Runnable() {
-            @Override
-            public void run() {
-                Okhttp3Test.postMultipart(Okhttp3Activity.this);
-            }
-        });
+        RetrofitOk3Test.postMultipart(RetrofitOk3Activity.this);
     }
 
 }
