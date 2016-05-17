@@ -64,6 +64,6 @@ bugtags {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.bugtags.library-canary:bugtags-lib:1.2.5'
+    compile 'com.bugtags.library:bugtags-lib:1.2.6'
 
 }

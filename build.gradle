@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.0'
 
-        classpath 'com.bugtags.library-canary:bugtags-gradle:1.2.6'
+        classpath 'com.bugtags.library:bugtags-gradle:1.2.6'
     }
 }
 
