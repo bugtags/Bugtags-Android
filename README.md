@@ -192,6 +192,13 @@ dependencies {
 ```
 
 # Change log
+### 2016.05.16 v1.2.6
+- fix bug in crash report, battery level
+- fix bug in network tracking when content-type is null
+- fix bug in logo display after login
+- auto proguard mapping upload plugin, support different appkey for every build variant
+- other fix
+
 ### 2016.04.26 v1.2.5
 - fix bug in network tracking in httpurlconnection
 - improve overlay permission granted logic in Andoid 6.0, only requested in needed
