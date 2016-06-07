@@ -192,6 +192,13 @@ dependencies {
 ```
 
 # Change log
+### 2016.06.07 v1.2.7
+- fix bug: stop tracking userstep doesn't take effects
+- fix bug: location will be null under some circumstances
+- fix bug: readable log for http request error
+- improvement: malformed appKey checking
+- improvement: encrypted appKey
+
 ### 2016.05.16 v1.2.6
 - fix bug in crash report, battery level
 - fix bug in network tracking when content-type is null

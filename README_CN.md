@@ -183,6 +183,13 @@ dependencies {
 ```
 
 # Change log
+### 2016.06.07 v1.2.7
+- 修复 userstep 无法关闭的问题
+- 修复某些起下，获取到的 location 为 null 的情况
+- 优化 http 请求错误 log
+- 检查非法 appkey
+- appkey 传输加密
+
 ### 2016.05.16 v1.2.6
 - 修复 crash 信息中电量信息
 - 修复网络请求中的 content-type 为空时返回错误的情况
