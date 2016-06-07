@@ -14,6 +14,10 @@ android {
         targetSdkVersion 22
         versionCode 22
         versionName "1.2.7"
+        ndk {
+            // 设置支持的 SO 库构架
+            abiFilters 'armeabi'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
     }
 
     packagingOptions {
