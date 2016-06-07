@@ -40,14 +40,14 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
-        //**重要**
+        
         classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
 }
 allprojects {
     repositories {
-        jcenter() //注：repository 1
-        mavenCentral()  //注：repository 2
+        jcenter() 
+        mavenCentral() 
     }
 }
 ```
@@ -55,59 +55,69 @@ allprojects {
 * Add `plugin and dependency` in your module's build.gradle file：
 
 ```groovy
-apply plugin: 'com.bugtags.library.plugin'
+    android {
+        compileSdkVersion ...
 
-//mapping upload
-bugtags {
-    appKey 'APP_KEY'  //your appKey
-    appSecret 'APP_SECRET'    //your appSecret，admin can access in setting page
-}
+        defaultConfig {
+            ndk {
+                // setup so arch
+                abiFilters 'armeabi'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            }
+        }
+    }
 
-dependencies {
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
-}
+    //applu Bugtags plugin
+    apply plugin: 'com.bugtags.library.plugin'
+
+    //Bugtags config
+    bugtags {
+        //upload mapping file
+        appKey "APP_KEY"  
+        appSecret "APP_SECRET"   
+        mappingUploadEnabled true
+
+        trackingNetworkEnabled true
+    }
+
+    dependencies {
+        ...
+        compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    }
 ```
-
-> The latest version is: **1.1.1**, you can also add dependency with specific version:
-
-> compile 'com.bugtags.library:bugtags-lib:1.1.1'
-
 
 ## Step 2:
 * Add three callbacks in your base Activity class:
 
-```java
-package your.package.name;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.MotionEvent;
-
-import com.bugtags.library.Bugtags;
-
-public class CustomActivity extends Activity {
-  @Override
-  protected void onResume() {
-      super.onResume();
-      //callback 1
-      Bugtags.onResume(this);
-  }
-
-  @Override
-  protected void onPause() {
-      super.onPause();
-      //callback 2
-      Bugtags.onPause(this);
-  }
-
-  @Override
-  public boolean dispatchTouchEvent(MotionEvent event) {
-      //callback 3
-      Bugtags.onDispatchTouchEvent(this, event);
-      return super.dispatchTouchEvent(event);
-  }
-}
 ```
+    package your.package.name;
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.view.MotionEvent;
+    import com.bugtags.library.Bugtags;
+
+    public class BaseActivity extends Activity{
+        @Override
+        protected void onResume() {
+            super.onResume();
+
+            Bugtags.onResume(this);
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+
+            Bugtags.onPause(this);
+        }
+
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event) {
+            Bugtags.onDispatchTouchEvent(this, event);
+
+            return super.dispatchTouchEvent(event);
+        }
+    }
+    ```
 
 ## Step 3:
 * Create subclass of Application，initialize Bugtags in onCreate() method:
@@ -133,6 +143,18 @@ public class MyApplication extends Application {
     android:theme="@style/AppTheme" >
     ....
 </application>
+```
+## Step 4：ProGuard
+
+```
+    # ProGuard configurations for Bugtags
+    -keepattributes LineNumberTable,SourceFile
+
+    -keep class com.bugtags.library.** {*;}
+    -dontwarn org.apache.http.**
+    -dontwarn android.net.http.AndroidHttpClient
+    -dontwarn com.bugtags.library.**
+    # End Bugtags
 ```
 
   For more information about Android Studio and gradle, please visit: [Android Developer Site].

@@ -22,165 +22,136 @@ Bugtags Android SDK
 
 # 使用gradle安装集成
 
-### 第一步：配置依赖
+## 第一步：配置依赖
 
-* Bugtags SDK 已经同步到 jcenter 和 MavenCentral，请在项目的 build.gradle（项目最外层的 build.gradle 文件，所谓的 Top-level build file）设置 `buildscript dependencies` ：
+* 在项目的 build.gradle（项目根目录的 build.gradle 文件）设置 `buildscript dependencies` ：
 
-```
-buildscript {
-    repositories {
-        jcenter()
-        mavenCentral()
+    ```
+    buildscript {
+        ...
+
+        dependencies {
+            ...
+            //**重要**
+            classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
+        }
     }
+    ```
+
+* 在你的 Android app(com.android.application) 模块的 build.gradle 应用插件和添加依赖：
+
+    ```
+    android {
+        compileSdkVersion ...
+
+        defaultConfig {
+            ndk {
+                // 设置支持的 SO 库构架
+                abiFilters 'armeabi'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            }
+        }
+    }
+
+    //应用 Bugtags 插件
+    apply plugin: 'com.bugtags.library.plugin'
+
+    //Bugtags 插件配置
+    bugtags {
+        //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考插件详细使用说明
+        appKey "APP_KEY"  //这里是你的 appKey
+        appSecret "APP_SECRET"    //这里是你的 appSecret，管理员在设置页可以查看
+        mappingUploadEnabled true
+
+        //网络跟踪功能配置(企业版)
+        trackingNetworkEnabled true
+    }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        //**重要**
-        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
+        ...
+        compile 'com.bugtags.library:bugtags-lib:latest.integration'
     }
-}
-allprojects {
-    repositories {
-        jcenter() //注：repository 1
-        mavenCentral()  //注：repository 2
+    ```
+
+    如下图：
+
+    ![Bugtags-Android-Studio](https://upload.bugtags.com/sdks/1606/07/gradle-config-57568242e2c36.png?bucket=bt-upload)
+
+## 第二步：添加回调
+
+* 在你的 `Activity 基类`（或所有的 Activity）中添加3个回调：
+
+    ```
+    package your.package.name;
+    import android.app.Activity;
+    import android.os.Bundle;
+    import android.view.MotionEvent;
+    import com.bugtags.library.Bugtags;
+
+    public class BaseActivity extends Activity{
+        @Override
+        protected void onResume() {
+            super.onResume();
+            //注：回调 1
+            Bugtags.onResume(this);
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            //注：回调 2
+            Bugtags.onPause(this);
+        }
+
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event) {
+            //注：回调 3
+            Bugtags.onDispatchTouchEvent(this, event);
+            return super.dispatchTouchEvent(event);
+        }
     }
-}
-```
+    ```
 
-* 在模块的 build.gradle `应用插件和添加依赖`：
-
-```
-//应用插件
-apply plugin: 'com.bugtags.library.plugin'
-
-//自动上传插件
-bugtags {
-    appKey 'APP_KEY'  //这里是你的 appKey
-    appSecret 'APP_SECRET'    //这里是你的 appSecret，管理员在设置页可以查看
-}
-
-dependencies {
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
-}
-```
-
-### 第二步：添加回调
-
-在你的 `Activity 基类`（或所有的 Activity）中添加3个回调：
-
-```
-package your.package.name;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import com.bugtags.library.Bugtags;
-
-public class BaseActivity extends Activity{
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //注：回调 1
-        Bugtags.onResume(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        //注：回调 2
-        Bugtags.onPause(this);
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        //注：回调 3
-        Bugtags.onDispatchTouchEvent(this, event);
-        return super.dispatchTouchEvent(event);
-    }
-}
-
-```
-
-### 第三步：启动 SDK
+## 第三步：启动 SDK
 
 * `继承 Application`，在 onCreate() 方法中初始化 Bugtags：
 
-```
-public class MyApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        //在这里初始化
-        Bugtags.start("APP_KEY", this, Bugtags.BTGInvocationEventBubble);
+    ```
+    public class MyApplication extends Application {
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            //在这里初始化
+            Bugtags.start("APP_KEY", this, Bugtags.BTGInvocationEventBubble);
+        }
     }
-}
-```
-
+    ```
 * 修改 `AndroidManifest.xml`，使用 `MyApplication` 类,例如：
 
-```
-<application
-    android:name=".MyApplication"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-    ....
-</application>
-```
+    ```
+    <application
+        android:name=".MyApplication"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        ....
+    </application>
+    ```
 
-关于如何使用 Android Studio 以及 gradle，请参考 bugtags 博客[系列文章](http://blog.bugtags.com/tags/EmbraceAndroidStudio/)。
+    关于如何使用 Android Studio 以及 gradle，请参考 bugtags 博客[系列文章](http://blog.bugtags.com/tags/EmbraceAndroidStudio/)。
 
-##### 编译运行 App，将会在 App 内部看到一个小球，成功了!
-
-# 高级选项
-1. 呼出方式 Invoke event:
-  * BTGInvocationEventBubble: 通过悬浮小球呼出Bugtags。
-  * BTGInvocationEventShake: 通过摇一摇呼出Bugtags。
-  * BTGInvocationEventNone: 不显示悬浮小球，只收集崩溃信息（如果允许）。
-2. 手动发送 Exception:
-  * Bugtags.sendException(Throwable ex);
-3. 发送文字反馈信息:
-  * Bugtags.sendFeedback(String msg);
-
-# Canary 发布渠道
-我们在canary渠道发布具有最新特性的版本，欢迎喜欢尝新的用户使用这个版本！
-> Canary: 金丝雀，早期旷工探洞，使用金丝雀来侦查环境，寓意勇敢尝试新特性。
-
-> From youdao dic: http://dict.youdao.com/search?q=canary&keyfrom=dict.index
-
-* 在project的build.gradle添加repository
+## 第四步：ProGuard 混淆规则
 
 ```
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-        maven{
-            url "https://dl.bintray.com/bugtags/maven"//新增
-        }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
-        classpath 'com.bugtags.library-canary:bugtags-gradle:latest.integration'//修改
-    }
-}
-allprojects {
-    repositories {
-        jcenter()
-        mavenCentral()
-        maven{
-            url "https://dl.bintray.com/bugtags/maven"//新增
-        }
-    }
-}
+# ProGuard configurations for Bugtags
+-keepattributes LineNumberTable,SourceFile
+
+-keep class com.bugtags.library.** {*;}
+-dontwarn org.apache.http.**
+-dontwarn android.net.http.AndroidHttpClient
+-dontwarn com.bugtags.library.**
+# End Bugtags
 ```
 
-* 在 module 的 build.gradle 更改 dependency
-
-```
-apply plugin: 'com.bugtags.library.plugin'
-
-dependencies {
-      compile 'com.bugtags.library-canary:bugtags-lib:latest.integration'//修改
-}
-```
+###编译运行 App，将会在 App 内部看到一个小球，成功了!###
 
 # Change log
 ### 2016.06.07 v1.2.7
