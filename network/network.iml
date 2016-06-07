@@ -105,8 +105,8 @@
     <orderEntry type="library" exported="" name="httpcore-4.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
-    <orderEntry type="library" exported="" name="retrofit1-okhttp3-client-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="retrofit1-okhttp3-client-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.1.1" level="project" />
