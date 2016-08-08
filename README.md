@@ -355,6 +355,9 @@ dependencies {
 # License
 This demo is [BSD-licensed](LICENSE).
 
+# Links
 [SDK for Eclipse]:https://github.com/bugtags/Bugtags-Android-Eclipse
+
 [Bugtags]:http://bugtags.com
+
 [Android Developer Site]:http://developer.android.com/tools/studio/index.html
