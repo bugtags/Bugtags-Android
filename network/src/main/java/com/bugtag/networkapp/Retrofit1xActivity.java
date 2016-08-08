@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Retrofit1xActivity extends AppCompatActivity {
+public class Retrofit1xActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

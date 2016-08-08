@@ -15,5 +15,5 @@ second=`echo $BUILD_TYPE|cut -c2-`
 
 ./gradlew -p app clean "assemble$first$second"
 
-adb install -r "network/build/outputs/apk/app-${BUILD_TYPE}.apk"
+adb install -r "app/build/outputs/apk/app-${BUILD_TYPE}.apk"
 adb shell am start -n com.bugtags.demo/.MainActivity

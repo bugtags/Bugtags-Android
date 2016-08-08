@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-def VERSION_NAME = "1.2.7"
-def VERSION_CODE = 22
+def VERSION_NAME = "1.2.6"
+def VERSION_CODE = 21
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -34,19 +34,35 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+afterEvaluate {
+    android.applicationVariants.each { variant ->
+        def bugtagsAppKey = null;
+        def bugtagsAppSecret = null;
+
+        if (variant.name.contains("debug")) {
+            bugtagsAppKey = 'd3ad445a39bf60628f7acd4bd08eff4f'
+            bugtagsAppSecret = 'e01dfb622b45cce0235fe2cc0b0b3798'
+        } else if (variant.name.contains("release")) {
+            bugtagsAppKey = '186cc7c96a5966b6615b34217b293f4f'
+            bugtagsAppSecret = '76839f82bc02b2e83fb650b9057149f6'
+        }
+
+        variant.ext.bugtagsAppKey = bugtagsAppKey
+        variant.ext.bugtagsAppSecret = bugtagsAppSecret
     }
 }
 
 apply plugin: 'com.bugtags.library.plugin'
 
-//Bugtags 插件配置
 bugtags {
-    //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考插件详细使用说明
-    appKey "APP_KEY"  //这里是你的 appKey
-    appSecret "APP_SECRET"    //这里是你的 appSecret，管理员在设置页可以查看
-    mappingUploadEnabled true
-
-    //网络跟踪功能配置(企业版)
     trackingNetworkEnabled true
 }
 
@@ -54,4 +70,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
 
+    compile 'com.bugtags.library:insta:latest.integration'
 }
