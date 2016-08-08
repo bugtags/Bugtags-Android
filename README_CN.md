@@ -154,6 +154,15 @@ Bugtags Android SDK
 ###编译运行 App，将会在 App 内部看到一个小球，成功了!###
 
 # Change log
+### 2016.08.08 v1.3.0
+- Bug 修复:在某些情况下出现的重传 OOM 情况
+- Bugtags.log 增加1000行的行数限制
+- 优化存储缓存系统,修复登陆后可能头像无法显示的问题
+- 优化初始化,加快初始化速度,增加异步初始化方式,详情参考[API 文档](https://docs.bugtags.com/zh/api/android/index.html)
+- 新增快速登录功能，登录过的帐号会自动保存，点击帐号即可直接登录，长按帐号可删除记录，支持卸载重新安装
+- 新增是否允许用户登录的接口,`BugtagsOptions -> enableUserSignIn`
+- 新增插件系统,支持 [BugtagsInsta](https://docs.bugtags.com/zh/bugtagsinsta/index.html) 实时跟踪插件
+
 ### 2016.06.07 v1.2.7
 - 修复 userstep 无法关闭的问题
 - 修复某些起下，获取到的 location 为 null 的情况

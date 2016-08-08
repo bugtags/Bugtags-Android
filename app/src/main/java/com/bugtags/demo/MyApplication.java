@@ -41,6 +41,6 @@ public class MyApplication extends Application {
             }
         });
 
-        Bugtags.registerPlugin(new BugtagsInsta());
+        Bugtags.registerPlugin(new BugtagsInsta(10224));
     }
 }
