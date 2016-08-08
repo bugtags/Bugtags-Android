@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.bugtag.networkapp.R;
 
-public class UrlActivity extends AppCompatActivity {
+public class UrlActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

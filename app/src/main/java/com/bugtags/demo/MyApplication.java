@@ -6,6 +6,8 @@ import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsCallback;
 import com.bugtags.library.BugtagsOptions;
 
+import io.bugtags.insta.BugtagsInsta;
+
 /**
  * Created by bugtags.com on 15/7/24.
  */
@@ -38,5 +40,7 @@ public class MyApplication extends Application {
                 Bugtags.log("after");
             }
         });
+
+        Bugtags.registerPlugin(new BugtagsInsta());
     }
 }
