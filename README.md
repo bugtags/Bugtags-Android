@@ -224,6 +224,7 @@ dependencies {
 - Feature: Added new start option: `enableUserSignIn`, you can set this flag according to your requirement.
 - Feature: Added plugin system,please refer: [API Reference](https://docs.bugtags.com/zh/api/android/index.html).
 - Feature: Added first official plugin: [BugtagsInsta](https://docs.bugtags.com/zh/bugtagsinsta/index.html) supports real-time tracking.
+- Fix: Fixed issue related to external storage permission.
 
 ### 1.2.7: June 7, 2016
 
