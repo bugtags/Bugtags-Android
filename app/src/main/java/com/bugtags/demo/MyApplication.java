@@ -23,6 +23,14 @@ public class MyApplication extends Application {
                 trackingCrashLog(true).//是否收集crash
                 trackingConsoleLog(true).//是否收集console log
                 trackingUserSteps(true).//是否收集用户操作步骤
+                startAsync(false).
+                startCallback(new BugtagsCallback() {
+                    @Override
+                    public void run() {
+
+                    }
+                }).
+                enableUserSignIn(true).
                 build();
 
         Bugtags.start(BuildConfig.DEBUG ? "d3ad445a39bf60628f7acd4bd08eff4f" : "186cc7c96a5966b6615b34217b293f4f", this, Bugtags.BTGInvocationEventBubble, options);
@@ -41,6 +49,6 @@ public class MyApplication extends Application {
             }
         });
 
-        Bugtags.registerPlugin(new BugtagsInsta(10224));
+        Bugtags.registerPlugin(new BugtagsInsta());
     }
 }
