@@ -214,7 +214,7 @@ dependencies {
 ```
 
 # Change log
-### 1.3.1: August 8, 2016
+### 1.3.1: August 10, 2016
 - Fix: Fixed rare OOM exception on resending cached issues.
 - Enhancement: Set Bugtags.log max lines limit to 1000.
 - Enhancement: Upgrade cache system.
