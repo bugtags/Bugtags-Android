@@ -2,10 +2,9 @@
 
 buildscript {
     repositories {
-        maven {
-            url 'http://dl.bintray.com/bugtags/maven'
+        jcenter {
+            url "http://jcenter.bintray.com/"
         }
-        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -17,10 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            url 'http://dl.bintray.com/bugtags/maven'
+        jcenter {
+            url "http://jcenter.bintray.com/"
         }
-        jcenter()
         mavenCentral()
     }
 }
