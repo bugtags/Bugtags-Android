@@ -20,6 +20,16 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile file("btg.jks")
+            storePassword "bugtags"
+            keyAlias "bugtags"
+            keyPassword "bugtags"
+        }
+    }
+
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/NOTICE'
@@ -28,10 +38,12 @@ android {
 
     buildTypes {
         debug {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
