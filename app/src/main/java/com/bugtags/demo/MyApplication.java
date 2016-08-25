@@ -50,5 +50,6 @@ public class MyApplication extends Application {
         });
 
         Bugtags.registerPlugin(new BugtagsInsta());
+        Bugtags.setUserData("test", "value");
     }
 }
