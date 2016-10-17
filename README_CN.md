@@ -142,13 +142,16 @@ Bugtags Android SDK
 
 ```
 # ProGuard configurations for Bugtags
--keepattributes LineNumberTable,SourceFile
+  -keepattributes LineNumberTable,SourceFile
 
--keep class com.bugtags.library.** {*;}
--dontwarn org.apache.http.**
--dontwarn android.net.http.AndroidHttpClient
--dontwarn com.bugtags.library.**
-# End Bugtags
+  -keep class com.bugtags.library.** {*;}
+  -dontwarn com.bugtags.library.**
+  -keep class io.bugtags.** {*;}
+  -dontwarn io.bugtags.**
+  -dontwarn org.apache.http.**
+  -dontwarn android.net.http.AndroidHttpClient
+
+  # End Bugtags
 ```
 
 ###编译运行 App，将会在 App 内部看到一个小球，成功了!###
