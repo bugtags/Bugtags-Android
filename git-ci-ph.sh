@@ -12,3 +12,4 @@ git add *
 git commit -m "$comment"
 git push origin master
 git push github master
+git push github --tags

@@ -64,8 +64,8 @@ bugtags {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    debugCompile 'com.bugtags.library:bugtags-lib:2.0.0'
-    debugCompile('com.bugtags.library:insta:2.0.0')
+    debugCompile 'com.bugtags.library:bugtags-lib:latest.integration'
+    debugCompile('com.bugtags.library:insta:latest.integration')
 
-    releaseCompile 'com.bugtags.library:bugtags-noop:2.0.0'
+    releaseCompile 'com.bugtags.library:bugtags-noop:latest.integration'
 }
