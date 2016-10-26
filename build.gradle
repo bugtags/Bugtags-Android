@@ -2,14 +2,11 @@
 
 buildscript {
     repositories {
-        maven {
-            url 'http://dl.bintray.com/bugtags/maven'
-        }
-        jcenter()
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:2.2.2'
 
         classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
@@ -17,11 +14,8 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            url 'http://dl.bintray.com/bugtags/maven'
-        }
-        jcenter()
         mavenCentral()
+        jcenter()
     }
 }
 
