@@ -65,6 +65,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
 
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.bugtags.library:insta:latest.integration'
 
     compile 'com.mcxiaoke.volley:library:1.0.19'
 
