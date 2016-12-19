@@ -24,6 +24,8 @@ public class MyApplication extends Application {
                 enableCapturePlus(true).
                 build();
 
+        Bugtags.addUserStep("custom step");
+
         Bugtags.start(BuildConfig.DEBUG ? "d3ad445a39bf60628f7acd4bd08eff4f" : "186cc7c96a5966b6615b34217b293f4f", this, Bugtags.BTGInvocationEventBubble, options);
     }
 }

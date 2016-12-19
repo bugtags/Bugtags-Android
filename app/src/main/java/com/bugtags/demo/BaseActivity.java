@@ -1,7 +1,9 @@
 package com.bugtags.demo;
 
 import android.app.Activity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
+
 import com.bugtags.library.Bugtags;
 
 public class BaseActivity extends Activity {
@@ -18,6 +20,12 @@ public class BaseActivity extends Activity {
         super.onPause();
         //注：回调 2
         Bugtags.onPause(this);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        Bugtags.onDispatchKeyEvent(this, event);
+        return super.dispatchKeyEvent(event);
     }
 
     @Override
