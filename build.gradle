@@ -2,14 +2,11 @@
 
 buildscript {
     repositories {
-        maven{
-        url "http://maven.aliyun.com/nexus/content/groups/public"
-    }
         mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.2.3'
 
         classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
@@ -17,9 +14,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{
-        url "http://maven.aliyun.com/nexus/content/groups/public"
-    }
         mavenCentral()
         jcenter()
     }
