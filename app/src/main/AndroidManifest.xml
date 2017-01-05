@@ -57,6 +57,18 @@
                 android:value=".MainActivity"/>
 
         </activity>
+        <receiver android:name=".AnrReceiver">
+            <intent-filter>
+                <action android:name="com.bugtags.anr.broadcast"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".AnrService"/>
+
+        <service
+            android:name=".StandAloneProcessService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":ab" />
     </application>
 
 </manifest>
