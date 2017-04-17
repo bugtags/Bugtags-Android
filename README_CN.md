@@ -1,7 +1,7 @@
 Bugtags Android SDK
 ===================
 [ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
-###帮助QQ群: 210286347
+### 帮助QQ群: 210286347
 
 [Bugtags]，为移动测试而生，随时随地改善你的移动应用。只需一步，提交 bug 及其上下文数据，自动捕捉崩溃，让修复 bug 更简单。
 
@@ -154,7 +154,7 @@ Bugtags Android SDK
   # End Bugtags
 ```
 
-###编译运行 App，将会在 App 内部看到一个小球，成功了!###
+### 编译运行 App，将会在 App 内部看到一个小球，成功了! ###
 
 # Change log
 

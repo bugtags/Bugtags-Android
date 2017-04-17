@@ -3,8 +3,8 @@
 Bugtags Android SDK
 ===================
 [ ![Download](https://api.bintray.com/packages/bugtags/maven/bugtags-lib/images/download.svg) ](https://bintray.com/bugtags/maven/bugtags-lib/_latestVersion)
-###中文文档请移步 [README_CN](README_CN.md)
-###QQ tribe for help: 210286347
+### 中文文档请移步 [README_CN](README_CN.md)
+### QQ tribe for help: 210286347
 
 [Bugtags] for Android, reports bugs and their diagnosis information in one step, captures crashes automatically. Improve your apps anywhere, anytime.
 
