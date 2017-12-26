@@ -4,8 +4,6 @@ import android.app.Application;
 
 import com.bugtags.library.Bugtags;
 
-import io.bugtags.insta.BugtagsInsta;
-
 /**
  * Created by bugtags.com on 16/3/11.
  */
@@ -15,7 +13,5 @@ public class App extends Application {
         super.onCreate();
 
         Bugtags.start("8f443d183b1d202a5b006faa4718e1a6", this, Bugtags.BTGInvocationEventBubble);
-
-        Bugtags.registerPlugin(new BugtagsInsta());
     }
 }

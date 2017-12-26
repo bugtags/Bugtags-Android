@@ -64,8 +64,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
-    compile 'com.bugtags.library:insta:latest.integration'
+    debugCompile 'com.bugtags.library:bugtags-lib:latest.integration'
+    releaseCompile 'com.bugtags.metrics:bugtags-lib:latest.integration'
 
     compile 'com.mcxiaoke.volley:library:1.0.19'
 
